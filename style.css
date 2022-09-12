@@ -119,8 +119,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2.8rem;
 }
 
 .line::after {
@@ -132,6 +131,7 @@ p {
   position: absolute;
   transform: translate(-50%, 0);
   width: 35rem;
+  margin-bottom: 2rem;
 }
 
 /* html element with author's info: pfp, name and article   
