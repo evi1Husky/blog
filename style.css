@@ -118,3 +118,27 @@ p {
   width: 35rem;
   /* margin-left: -1rem; */
 }
+
+.authorsPfp {
+  border-radius: 1.9rem;
+}
+
+.authorsInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.nameDate {
+  margin-left: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around
+}
+
+.authorsName {
+  font-size: 1rem;
+}
+
+.publishingDate {
+  font-size: 0.9rem;
+}
