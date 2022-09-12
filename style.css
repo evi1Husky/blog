@@ -1,9 +1,11 @@
 * {
   margin: 0;
+  padding: 0;
+  background: #b3b8c0;
+  /* background: #abb2bf; */
 }
 
 .content {
-  background: #abb2bf;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -16,26 +18,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .header::after {
-  background-color: #555758;
+  background-color: #3f4145;
   content: '';
   display: block;
   height: 1px;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
-  width: 94%;
-  margin-top: 5rem;
+  width: 96%;
+  margin-top: 5.5rem;
 }
 
 .headerText {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inconsolata', monospace;
   font-weight: 400;
-  font-size: 2rem;
-  color: #252626;
+  font-size: 2.5rem;
+  color: #3f4145;
   margin-top: 0.8rem;
 }
 
@@ -47,32 +48,73 @@
 }
 
 .footer::after {
-  background-color: #555758;
+  background-color: #4c4e53;
   content: '';
   display: block;
   height: 1px;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
-  width: 90%;
+  width: 96%;
   margin-bottom: 2.5rem;
 }
 
 #link {
-  color: #252626;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  color: #4c4e53;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 500;
   font-size: 0.844rem;
   text-decoration: none;
   margin-bottom: 0.5rem
 }
 
-/* #displayPrimary{
-  animation: none;
+.articleContainer {
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  font-family: 'Inconsolata', monospace;
+  color: #3f4145;
+  /* border-style: dashed;
+  border-color: #3a3c3f;
+  border-width: 0.1px; */
+  width: 40rem;
 }
 
-@keyframes blinkingText {
-  0% {color: transparent;}
-  99% {color: transparent;}
-  100% {color: #acaeae;}
-} */
+h2 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.publishingDate {
+  font-size: 0.8rem;
+  color: #575a5e
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line::after {
+  background-color: #7f828a;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 49%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 35rem;
+  /* margin-left: -1rem; */
+}
