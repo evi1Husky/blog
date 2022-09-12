@@ -14,6 +14,8 @@
   justify-content: flex-start;
 }
 
+/* header with shorter line */
+
 .header {
   display: flex;
   justify-content: center;
@@ -28,7 +30,7 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
-  width: 96%;
+  width: 95%;
   margin-top: 5.5rem;
 }
 
@@ -39,6 +41,9 @@
   color: #3f4145;
   margin-top: 0.8rem;
 }
+
+/* responsive footer that always stays at the bottom of the page using 
+margin-top: auto */
 
 .footer {
   margin-top: auto;
@@ -55,7 +60,7 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
-  width: 96%;
+  width: 95%;
   margin-bottom: 2.5rem;
 }
 
@@ -67,6 +72,8 @@
   text-decoration: none;
   margin-bottom: 0.5rem
 }
+/* html element that dynamically displays blog article content pulled from the
+database */
 
 .articleContainer {
   margin-top: 5rem;
@@ -79,8 +86,10 @@
   width: 40rem;
 }
 
+/* article elements formatting */
+
 h2 {
-  margin-top: 1.5rem;
+  margin-top: 2.7rem;
   font-size: 2rem;
 }
 
@@ -90,16 +99,13 @@ h3 {
   font-size: 1.5rem;
 }
 
-.publishingDate {
-  font-size: 0.8rem;
-  color: #575a5e
-}
-
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
+
+/* add a short fine line after article sections */
 
 .line {
   display: flex;
@@ -116,16 +122,18 @@ p {
   position: absolute;
   transform: translate(-50%, 0);
   width: 35rem;
-  /* margin-left: -1rem; */
 }
 
-.authorsPfp {
-  border-radius: 1.9rem;
-}
+/* html element with author's info: pfp, name and article
+article publishing date, attached to the top of the article*/
 
 .authorsInfo {
   display: flex;
   flex-direction: row;
+}
+
+.authorsPfp {
+  border-radius: 1.9rem;
 }
 
 .nameDate {
@@ -141,4 +149,19 @@ p {
 
 .publishingDate {
   font-size: 0.9rem;
+  color: #575a5e
+}
+
+/* media queries for small browsers */
+
+@media (max-width: 710px) {
+
+  .articleContainer {
+    width: 90%;
+  }
+
+  .line::after {
+    width: 80%;
+  }
+
 }
