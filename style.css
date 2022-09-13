@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  background: #c6ccd4;
-  /* background: #b3b8c0; */
+  background: #e8ecf2;
 }
 
 .content {
@@ -183,4 +182,20 @@ article publishing date, attached to the top of the article*/
     margin-top: 2rem;
     margin-bottom: 3.3rem;
   }
+}
+
+/* svg header menu button animation */
+
+#headerMenu {
+  cursor: default;
+}
+
+#headerMenu:hover {
+  border-radius: 100%;
+  background: #c8cad2;
+}
+
+#headerMenu:active {
+  border-radius: 100%;
+  background: #d6d8e1;
 }
