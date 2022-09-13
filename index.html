@@ -15,14 +15,20 @@
   rel="stylesheet">
 </head>
 <body>
-  <div class="content">
+  <div class="content" id="content">
     <div class="header">
       <h1 class="headerText">Header</h1>
-      <div class="headerMenu">
+      <div class="headerMenu" id="menuButton">
         <img id="headerMenu" src="images/menuButton.svg">
+        <div class="dropDownMenu" id="dropDownMenu">
+            menu content <br><br><br><br><br>
+            menu content <br><br><br><br><br>
+            menu content <br><br><br><br><br>
+            menu content <br><br><br><br><br>
+        </div>
       </div>
     </div>
-    <div class="articleContainer">
+    <div class="articleContainer" id="articleContainer">
       <div class="article">
         <div class="authorsInfo">
           <img class="authorsPfp" src="images/pfp.png" alt="">
@@ -138,5 +144,6 @@
       <h1 id="link">Footer</h1>
     </div>
   </div>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

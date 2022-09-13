@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  background: #e8ecf2;
+  background: #e5eaf1;
 }
 
 .content {
@@ -46,7 +46,7 @@
 
 .headerMenu {
   position:absolute;
-  margin-left: 84%;
+  right: 5%;
   margin-top: 1.4rem;
 }
 
@@ -198,4 +198,15 @@ article publishing date, attached to the top of the article*/
 #headerMenu:active {
   border-radius: 100%;
   background: #d6d8e1;
+}
+
+/* drop down menu */
+
+.dropDownMenu {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0%;
+  background: #575a5e;
+  width: 13rem;
+  display: none;
 }
