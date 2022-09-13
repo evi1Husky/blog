@@ -88,9 +88,6 @@ database */
   margin-bottom: 4rem;
   font-family: 'Inconsolata', monospace;
   color: #3f4145;
-  /* border-style: dashed;
-  border-color: #3a3c3f;
-  border-width: 0.1px; */
   width: 40rem;
 }
 
@@ -204,9 +201,20 @@ article publishing date, attached to the top of the article*/
 
 .dropDownMenu {
   position: absolute;
-  top: calc(100% + 1rem);
+  top: calc(100% + 1.2rem);
   right: 0%;
-  background: #575a5e;
-  width: 13rem;
+  background: #e5eaf1;
+  width: 18rem;
+  height: 25rem;
   display: none;
+  border-radius: 2%;
+  /* border-style: solid;
+  border-width: 1px;
+  border-color: #7f828a; */
+  box-shadow: 2px 2px 11px rgba(0,0,0,0.2);
+}
+
+.dropDownMenu {
+    animation: growDown 300ms ease-in-out forwards
+    transform-origin: top center
 }
