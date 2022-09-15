@@ -124,7 +124,7 @@ p {
   content: '';
   display: block;
   height: 1px;
-  left: 49%;
+  left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
   width: 35rem;
@@ -185,9 +185,14 @@ article publishing date, attached to the top of the article*/
 
 #headerMenu {
   cursor: default;
+  transform: rotate(0deg);
+  user-select: none;
+  pointer-events: none;
+  border-radius: 100%;
+  background: #e5eaf1;
 }
 
-#headerMenu:hover {
+/* #headerMenu:hover {
   border-radius: 100%;
   background: #c8cad2;
 }
@@ -195,26 +200,23 @@ article publishing date, attached to the top of the article*/
 #headerMenu:active {
   border-radius: 100%;
   background: #d6d8e1;
-}
+  transform: rotate(0deg);
+} */
 
 /* drop down menu */
 
 .dropDownMenu {
   position: absolute;
   top: calc(100% + 1.2rem);
-  right: 0%;
+  right: -40%;
   background: #e5eaf1;
   width: 18rem;
   height: 25rem;
   display: none;
   border-radius: 2%;
-  /* border-style: solid;
-  border-width: 1px;
-  border-color: #7f828a; */
-  box-shadow: 2px 2px 11px rgba(0,0,0,0.2);
+  box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
 }
 
-.dropDownMenu {
-    animation: growDown 300ms ease-in-out forwards
-    transform-origin: top center
+#svgContainer {
+  position: relative;
 }
