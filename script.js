@@ -36,10 +36,10 @@ if ("ontouchstart" in document.documentElement)
       const display = style.display;
       if (display === 'none') {
         menuButtonSvg.style.transform = 'rotate(0deg)'
-        // menuButtonSvg.style.background = '#e5eaf1'
+        menuButtonSvg.style.background = '#e5eaf1'
       } else {
         menuButtonSvg.style.transform = 'rotate(90deg)'
-        // menuButtonSvg.style.background = '#c8cad2'
+        menuButtonSvg.style.background = '#c8cad2'
       }
     });
   })();
