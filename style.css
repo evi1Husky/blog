@@ -48,6 +48,7 @@
   position:absolute;
   right: 5%;
   margin-top: 1.4rem;
+  border-radius: 100%;
 }
 
 /* responsive footer that always stays at the bottom of the page using 
@@ -217,6 +218,6 @@ article publishing date, attached to the top of the article*/
   box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
 }
 
-#svgContainer {
+/* #svgContainer {
   position: relative;
-}
+} */
