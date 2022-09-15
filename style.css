@@ -195,6 +195,19 @@ article publishing date, attached to the top of the article*/
 
 /* drop down menu */
 
+@keyframes fade {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+  }
+}
+
 .dropDownMenu {
   position: absolute;
   top: calc(100% + 1.2rem);
@@ -205,4 +218,14 @@ article publishing date, attached to the top of the article*/
   display: none;
   border-radius: 2%;
   box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
+  opacity: 93%;
+  padding: 2rem 1rem;
+  animation: fade 0.0s linear backwards;
+}
+
+
+#aaa {
+  font-family: 'Inconsolata', monospace;
+  color: #e5eaf1;
+  background-color: #3f4145;
 }
