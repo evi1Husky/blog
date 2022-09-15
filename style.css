@@ -193,20 +193,11 @@ article publishing date, attached to the top of the article*/
   background: #e5eaf1;
 }
 
-/* drop down menu */
-
-@keyframes fade {
-  from {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(10px);
-  }
-  to { 
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(0);
-  }
+#svgContainerMenu {
+  border: 0;
 }
+
+/* drop down menu */
 
 .dropDownMenu {
   position: absolute;
@@ -220,9 +211,8 @@ article publishing date, attached to the top of the article*/
   box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
   opacity: 93%;
   padding: 2rem 1rem;
-  animation: fade 0.0s linear backwards;
+  
 }
-
 
 #aaa {
   font-family: 'Inconsolata', monospace;
