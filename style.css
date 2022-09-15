@@ -193,17 +193,6 @@ article publishing date, attached to the top of the article*/
   background: #e5eaf1;
 }
 
-/* #headerMenu:hover {
-  border-radius: 100%;
-  background: #c8cad2;
-}
-
-#headerMenu:active {
-  border-radius: 100%;
-  background: #d6d8e1;
-  transform: rotate(0deg);
-} */
-
 /* drop down menu */
 
 .dropDownMenu {
@@ -217,7 +206,3 @@ article publishing date, attached to the top of the article*/
   border-radius: 2%;
   box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
 }
-
-/* #svgContainer {
-  position: relative;
-} */

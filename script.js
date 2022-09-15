@@ -1,7 +1,7 @@
-/* Assign event listener to the drop down menu button svg  using container
-immediately invoked function, hide drop down menu by clicking anywhere on the
-except the button and the menu, to do so assign an even listener to the entire
-document and use an if statement to check if an element is menu button/drop 
+/* Assign event listener to the drop down menu button svg using an immediately
+invoked function, hide drop down menu by clicking anywhere on the except the
+button and the menu, to do so assign an even listener to the entire document
+and use an if statement to check if an element is menu button/drop 
 down menu */
 
 (() => {
@@ -26,7 +26,6 @@ down menu */
 /* rotate menu button on click and change background on mouseover,
  check if mobile browser to assign different event listeners */
 
-
 if ("ontouchstart" in document.documentElement)
 {
   (() => {
@@ -37,10 +36,10 @@ if ("ontouchstart" in document.documentElement)
       const display = style.display;
       if (display === 'none') {
         menuButtonSvg.style.transform = 'rotate(0deg)'
-        menuButtonSvg.style.background = '#e5eaf1'
+        // menuButtonSvg.style.background = '#e5eaf1'
       } else {
         menuButtonSvg.style.transform = 'rotate(90deg)'
-        menuButtonSvg.style.background = '#c8cad2'
+        // menuButtonSvg.style.background = '#c8cad2'
       }
     });
   })();
