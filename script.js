@@ -1,14 +1,13 @@
-/* Assign event listener to the drop down menu button using immediately
-invoked function, hide drop down menu by clicking anywhere on the page except
-the button and the menu, to do so assign an even listener to the entire 
+/* Assign event listener to the drop down menu button svg  using container
+immediately invoked function, hide drop down menu by clicking anywhere on the
+except the button and the menu, to do so assign an even listener to the entire
 document and use an if statement to check if an element is menu button/drop 
 down menu */
 
 (() => {
   const menuButton = document.getElementById('svgContainerMenu');
+  const dropDownMenu = document.querySelector('.dropDownMenu');
   menuButton.addEventListener('click', function() {
-    const dropDownMenu = document.querySelector('.dropDownMenu');
-    const menuButton = document.getElementById('headerMenu');
     const style = getComputedStyle(dropDownMenu)
     const display = style.display;
     if (display === 'none') {
@@ -17,62 +16,41 @@ down menu */
       dropDownMenu.style.display = 'none'
     }
   });
-})();
-
-(() => {
   document.addEventListener('click', function(e) {
-    const menuButton = document.getElementById('svgContainerMenu');
-    const dropDownMenu = document.querySelector('.dropDownMenu');
     if (e.target !== menuButton && e.target !== dropDownMenu) {
       dropDownMenu.style.display = 'none'
     }
   });
 })();
 
-/* rotate menu button on click */
+/* rotate menu button on click and change background on mouseover*/
 
 (() => {
+  const menuButtonSvg = document.getElementById('headerMenu');
+  const menuButton = document.getElementById('svgContainerMenu');
+  const dropDownMenu = document.querySelector('.dropDownMenu');
   document.addEventListener('click', function() {
-    const dropDownMenu = document.querySelector('.dropDownMenu');
     const style = getComputedStyle(dropDownMenu)
     const display = style.display;
-    const menuButton = document.getElementById('headerMenu');
     if (display === 'none') {
-      menuButton.style.transform = 'rotate(0deg)'
+      menuButtonSvg.style.transform = 'rotate(0deg)'
+      menuButtonSvg.style.background = '#e5eaf1'
     } else {
-      menuButton.style.transform = 'rotate(90deg)'
+      menuButtonSvg.style.transform = 'rotate(90deg)'
+      menuButtonSvg.style.background = '#c8cad2'
     }
   });
-})();
-
-(() => {
-  const menuButton = document.getElementById('svgContainerMenu');
-  menuButton.addEventListener('mouseover', function() {
-    const menuButtonSvg = document.getElementById('headerMenu');
-      menuButtonSvg.style.background = '#c8cad2'
-  });
-})();
-
-(() => {
-  const menuButton = document.getElementById('svgContainerMenu');
-  menuButton.addEventListener('mouseout', function() {
-    const menuButtonSvg = document.getElementById('headerMenu');
-      menuButtonSvg.style.background = '#e5eaf1'
-  });
-})();
-
-(() => {
-  const menuButton = document.getElementById('svgContainerMenu');
+  // menuButton.addEventListener('mouseover', function() {
+  //   menuButtonSvg.style.background = '#c8cad2'
+  // });
+  // menuButton.addEventListener('mouseout', function() {
+  //   menuButtonSvg.style.background = '#e5eaf1'
+  // });
   menuButton.addEventListener('mousedown', function() {
-    const menuButtonSvg = document.getElementById('headerMenu');
-      menuButtonSvg.style.background = '#d6d8e1'
+    menuButtonSvg.style.background = '#d6d8e1'
+  });
+  menuButton.addEventListener('mouseup', function() {
+    menuButtonSvg.style.background = '#c8cad2'
   });
 })();
 
-(() => {
-  const menuButton = document.getElementById('svgContainerMenu');
-  menuButton.addEventListener('mouseup', function() {
-    const menuButtonSvg = document.getElementById('headerMenu');
-      menuButtonSvg.style.background = '#c8cad2'
-  });
-})();
