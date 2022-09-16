@@ -30,6 +30,7 @@ if ("ontouchstart" in document.documentElement)
 {
   (() => {
     const menuButtonSvg = document.getElementById('headerMenu');
+    const menuButton = document.getElementById('svgContainerMenu');
     const dropDownMenu = document.querySelector('.dropDownMenu');
     document.addEventListener('click', function() {
       const style = getComputedStyle(dropDownMenu)
@@ -39,6 +40,12 @@ if ("ontouchstart" in document.documentElement)
       } else {
         menuButtonSvg.style.transform = 'rotate(90deg)'
       }
+    });
+    menuButton.addEventListener('touchstart', function() {
+      menuButtonSvg.style.background = '#c8cad2'
+    });
+    menuButton.addEventListener('touchend', function() {
+      menuButtonSvg.style.background = '#e5eaf1'
     });
   })();
 } else {

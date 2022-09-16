@@ -190,11 +190,12 @@ article publishing date, attached to the top of the article*/
   user-select: none;
   pointer-events: none;
   border-radius: 100%;
-  background: #e5eaf1;
+  background: transparent;
 }
 
 #svgContainerMenu {
   border: 0;
+  background: transparent;
 }
 
 /* drop down menu */
@@ -214,25 +215,27 @@ article publishing date, attached to the top of the article*/
   
 }
 
-#aaa {
-  font-family: 'Inconsolata', monospace;
-  color: #e5eaf1;
-  background-color: #3f4145;
-}
-
 /* Back to the top button that appears when you reach the bottom of the page */
 
 .backToTheTopButton {
   position: fixed;
   z-index: 100;
   opacity: 1;
-  bottom: 10rem; 
-  right: 5.6%; 
+  bottom: 9.5rem; 
+  right: 5%; 
   transform: translateY(100px);
-  transition: all .5s ease
+  transition: all .5s ease;
+  border: 0;
+  background-image: none;
+  background: transparent;
 }
 
 .showButton {
   opacity: 1;
   transform: translateY(0)
+}
+
+#toTheTop {
+  background-color: transparent;
+  transform: rotate(-90deg);
 }
