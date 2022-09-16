@@ -69,3 +69,11 @@ if ("ontouchstart" in document.documentElement)
     });
   })();
 }
+
+
+
+
+
+const target = document.querySelector('.footer');
+
+console.log(target);
