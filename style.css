@@ -220,22 +220,18 @@ article publishing date, attached to the top of the article*/
 .backToTheTopButton {
   position: fixed;
   z-index: 100;
-  opacity: 1;
-  bottom: 9.5rem; 
+  opacity: 0;
+  bottom: 3.2rem; 
   right: 5%; 
-  transform: translateY(100px);
-  transition: all .5s ease;
   border: 0;
   background-image: none;
   background: transparent;
-}
-
-.showButton {
-  opacity: 1;
-  transform: translateY(0)
+  transition: all 0.2s ease;
 }
 
 #toTheTop {
   background-color: transparent;
+  pointer-events: none;
+  border-radius: 100%;
   transform: rotate(-90deg);
 }

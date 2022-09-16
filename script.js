@@ -11,14 +11,14 @@ down menu */
     const style = getComputedStyle(dropDownMenu)
     const display = style.display;
     if (display === 'none') {
-      dropDownMenu.style.display = 'block'
+      dropDownMenu.style.display = 'block';
     } else {
-      dropDownMenu.style.display = 'none'
+      dropDownMenu.style.display = 'none';
     }
   });
   document.addEventListener('click', function(e) {
     if (e.target !== menuButton && e.target !== dropDownMenu) {
-      dropDownMenu.style.display = 'none'
+      dropDownMenu.style.display = 'none';
     }
   });
 })();
@@ -26,8 +26,6 @@ down menu */
 /* rotate menu button on click and change background on mouseover,
  check if mobile browser to assign different event listeners */
 
-if ("ontouchstart" in document.documentElement)
-{
   (() => {
     const menuButtonSvg = document.getElementById('headerMenu');
     const menuButton = document.getElementById('svgContainerMenu');
@@ -41,46 +39,81 @@ if ("ontouchstart" in document.documentElement)
         menuButtonSvg.style.transform = 'rotate(90deg)'
       }
     });
-    menuButton.addEventListener('touchstart', function() {
-      menuButtonSvg.style.background = '#c8cad2'
+    if ("ontouchstart" in document.documentElement) {
+      menuButton.addEventListener('touchstart', function() {
+        menuButtonSvg.style.background = '#c8cad2';
+      });
+      menuButton.addEventListener('touchend', function() {
+        menuButtonSvg.style.background = 'transparent';
     });
-    menuButton.addEventListener('touchend', function() {
-      menuButtonSvg.style.background = '#e5eaf1'
-    });
+    } else {
+      menuButton.addEventListener('mouseover', function() {
+        menuButtonSvg.style.background = '#c8cad2';
+      });
+      menuButton.addEventListener('mouseout', function() {
+        menuButtonSvg.style.background = 'transparent';
+      });
+      menuButton.addEventListener('mousedown', function() {
+        menuButtonSvg.style.background = '#d6d8e1';
+      });
+      menuButton.addEventListener('mouseup', function() {
+        menuButtonSvg.style.background = '#c8cad2';
+      });
+    }
   })();
-} else {
-  (() => {
-    const menuButtonSvg = document.getElementById('headerMenu');
-    const menuButton = document.getElementById('svgContainerMenu');
-    const dropDownMenu = document.querySelector('.dropDownMenu');
-    document.addEventListener('click', function() {
-      const style = getComputedStyle(dropDownMenu)
-      const display = style.display;
-      if (display === 'none') {
-        menuButtonSvg.style.transform = 'rotate(0deg)'
+
+/* Use Intersection Observer API to make the scroll to the top button appear when
+ reaching the bottom of the page */
+
+(() => {
+  const target = document.querySelector('.footer');
+  const backToTheTopButton = document.querySelector('.backToTheTopButton');
+  function callback(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        backToTheTopButton.style.opacity = '1'
       } else {
-        menuButtonSvg.style.transform = 'rotate(90deg)'
+        backToTheTopButton.style.opacity = '0'
       }
     });
-    menuButton.addEventListener('mouseover', function() {
-      menuButtonSvg.style.background = '#c8cad2'
+  }
+  const observer = new IntersectionObserver(callback);
+  observer.observe(target);
+})();
+
+/* Pass scrollTo method to addEventListener to enable scrolling to the 
+ top of the page on button click */
+
+(() => {
+  const toTheTop = document.getElementById('toTheTop');
+  const backToTheTopButton = document.getElementById('backToTheTopButton');
+  const rootElement = document.documentElement;
+  backToTheTopButton.addEventListener("click", function() {
+    rootElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
-    menuButton.addEventListener('mouseout', function() {
-      menuButtonSvg.style.background = '#e5eaf1'
+  });
+  if ("ontouchstart" in document.documentElement) {
+    backToTheTopButton.addEventListener('touchstart', function() {
+      toTheTop.style.background = '#c8cad2';
     });
-    menuButton.addEventListener('mousedown', function() {
-      menuButtonSvg.style.background = '#d6d8e1'
+    backToTheTopButton.addEventListener('touchend', function() {
+      toTheTop.style.background = 'transparent';
     });
-    menuButton.addEventListener('mouseup', function() {
-      menuButtonSvg.style.background = '#c8cad2'
+  } else {
+    backToTheTopButton.addEventListener('mouseover', function() {
+      toTheTop.style.background = '#c8cad2';
     });
-  })();
-}
-
-
-
-
-
-const target = document.querySelector('.footer');
-
-console.log(target);
+    backToTheTopButton.addEventListener('mouseout', function() {
+      toTheTop.style.background = 'transparent';
+      backToTheTopButton.style.background = 'transparent';
+    });
+    backToTheTopButton.addEventListener('mousedown', function() {
+      toTheTop.style.background = '#d6d8e1';
+    });
+    backToTheTopButton.addEventListener('mouseup', function() {
+      toTheTop.style.background = '#c8cad2';
+  });
+  }
+})();
