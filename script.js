@@ -1,3 +1,5 @@
+// Drop down menu 
+
 /* Assign event listener to the drop down menu button svg container, hide
 drop down menu by clicking anywhere on the page except the button and the
 the menu, to do so assign an even listener to the entire document
@@ -62,6 +64,8 @@ down menu */
     }
   })();
 
+// Scroll to the top button
+
 /* Use Intersection Observer API to make the scroll to the top button appear when
  reaching the bottom of the page */
 
@@ -117,3 +121,13 @@ down menu */
   });
   }
 })();
+
+// Dark/light mode toggle button
+
+/* toggle classes to animate buttons and change web page color scheme */
+
+document.getElementById("darkModeButtonContainer").addEventListener("click", () => {
+  document.getElementById("sunLogo").classList.toggle("sunLogoAnimate");
+  document.getElementById("moonLogo").classList.toggle("moonLogoAnimate");
+  document.querySelector("body").classList.toggle("dark");
+})

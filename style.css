@@ -1,8 +1,25 @@
 * {
   margin: 0;
   padding: 0;
-  background: #e5eaf1;
 }
+
+body {
+  background: #e5eaf1;
+  transition: background-color 1s;
+}
+
+/* Set box sizing to border box for better element sizing control */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Create a container that holds all web page elements and displays them
+   vertically using flex column direction */
 
 .content {
   display: flex;
@@ -12,6 +29,8 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+/*  Header
 
 /* header with shorter line */
 
@@ -44,15 +63,10 @@
   align-self: center;
 }
 
-.headerMenu {
-  position:absolute;
-  right: 5%;
-  margin-top: 1.4rem;
-  border-radius: 100%;
-}
+/* Footer
 
-/* responsive footer that always stays at the bottom of the page using 
-margin-top: auto */
+/* responsive footer with short line that always stays at the bottom
+   of the page using margin-top: auto */
 
 .footer {
   margin-top: auto;
@@ -81,8 +95,8 @@ margin-top: auto */
   text-decoration: none;
   margin-bottom: 0.5rem
 }
-/* html element that dynamically displays blog article content pulled from the
-database */
+
+/* container for blog articles */
 
 .articleContainer {
   margin-top: 5rem;
@@ -110,7 +124,7 @@ p {
   font-size: 1.2rem;
 }
 
-/* add a short fine line after article sections */
+/* add an article decoration line after paragraphs */
 
 .line {
   display: flex;
@@ -132,7 +146,7 @@ p {
 }
 
 /* html element with author's info: pfp, name and article   
-article publishing date, attached to the top of the article*/
+   publishing date */
 
 .authorsInfo {
   display: flex;
@@ -159,7 +173,131 @@ article publishing date, attached to the top of the article*/
   color: #575a5e
 }
 
-/* media queries for small browsers */
+/* position header buttons using flex box and right properties */
+
+.headerButtons {
+  position: absolute;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.6rem;
+  justify-content: space-evenly;
+ }
+ /* Drop down menu */
+
+ .headerMenu {
+  border-radius: 100%;
+}
+
+/* svg header menu button animation */
+/* disable pointer events and use a wrapper div instead because directly clicking
+   on inline SVG elements doesn't trigger events */
+
+#headerMenu {
+  cursor: default;
+  transform: rotate(0deg);
+  user-select: none;
+  pointer-events: none;
+  border-radius: 100%;
+  background: transparent;
+}
+
+#svgContainerMenu {
+  border: 0;
+  background: transparent;
+}
+
+/* drop down menu */
+
+.dropDownMenu {
+  position: absolute;
+  top: calc(100% + 1.2rem);
+  right: 0;
+  background: #e5eaf1;
+  width: 18rem;
+  height: 25rem;
+  display: none;
+  border-radius: 2%;
+  box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
+  opacity: 93%;
+  padding: 2rem 1rem;
+  
+}
+
+/* Scroll to the top button */
+
+/* Back to the top button that appears when you reach the bottom of the page */
+
+.backToTheTopButton {
+  position: fixed;
+  z-index: 100;
+  opacity: 0;
+  bottom: 3.2rem; 
+  right: 5%; 
+  border: 0;
+  background-image: none;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+#toTheTop {
+  background-color: transparent;
+  pointer-events: none;
+  border-radius: 100%;
+  transform: rotate(-90deg);
+}
+
+/* Dark/light mode toggle button */
+
+/* Use opacity and translate/transform to create button toggle effect */
+
+#sunButtonSvg {
+  fill: #3f4145;
+  stroke:#3f4145;
+  stroke-width:0.25;
+}
+
+#moonButtonSvg {
+  fill:#3f4145;
+  stroke:#3f4145;
+  stroke-width:0.264523;
+}
+
+.sunLogo, .moonLogo {
+  font-size: 2rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+.sunLogo {
+  opacity: 1;
+  transform: translateY(0) rotateZ(0deg);
+  transition: all 1s ease-out;
+}
+
+.moonLogo {
+  inset: 0;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20%) rotateZ(50deg);
+  transition: all 1s ease-out;
+}
+
+.sunLogoAnimate {
+  opacity: 0;
+  transform: translateY(20%) rotateZ(100deg);
+}
+
+.moonLogoAnimate {
+  opacity: 1;
+  transform: translateY(0%) rotateZ(0deg);
+}
+
+.dark{
+  background-color: black;
+}
+
+/* media queries for small browser windows */
 
 @media (max-width: 710px) {
 
@@ -182,56 +320,18 @@ article publishing date, attached to the top of the article*/
   }
 }
 
-/* svg header menu button animation */
+/* media queries for desktop browsers */
 
-#headerMenu {
-  cursor: default;
-  transform: rotate(0deg);
-  user-select: none;
-  pointer-events: none;
-  border-radius: 100%;
-  background: transparent;
-}
+@media (min-width: 900px) {
+  .headerButtons {
+    right: 15%;
+  }
 
-#svgContainerMenu {
-  border: 0;
-  background: transparent;
-}
+  #darkModeButtonContainer {
+    margin-right: 1.5rem;
+  }
 
-/* drop down menu */
-
-.dropDownMenu {
-  position: absolute;
-  top: calc(100% + 1.2rem);
-  right: -40%;
-  background: #e5eaf1;
-  width: 18rem;
-  height: 25rem;
-  display: none;
-  border-radius: 2%;
-  box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
-  opacity: 93%;
-  padding: 2rem 1rem;
-  
-}
-
-/* Back to the top button that appears when you reach the bottom of the page */
-
-.backToTheTopButton {
-  position: fixed;
-  z-index: 100;
-  opacity: 0;
-  bottom: 3.2rem; 
-  right: 5%; 
-  border: 0;
-  background-image: none;
-  background: transparent;
-  transition: all 0.2s ease;
-}
-
-#toTheTop {
-  background-color: transparent;
-  pointer-events: none;
-  border-radius: 100%;
-  transform: rotate(-90deg);
+  .backToTheTopButton {
+    right: 15%;
+  }
 }
