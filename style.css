@@ -218,7 +218,7 @@ p {
   top: calc(100% + 1.2rem);
   right: 0;
   background: #e5eaf1;
-  width: 16rem;
+  width: 19rem;
   height: 25rem;
   display: none;
   border-radius: 2%;
@@ -349,7 +349,7 @@ p {
   fill:#3f4145;
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
-  margin-left: 11%;
+  margin-left: 13%;
 }
 
 #path1698 {
@@ -385,5 +385,5 @@ p {
 #infoButtonText {
   font-family: 'Inconsolata', monospace;
   font-size: 1.2rem;
-  margin-left: 2%;
+  margin-left: 5%;
 }
