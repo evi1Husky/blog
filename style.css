@@ -298,7 +298,6 @@ p {
 .moonLogoAnimate {
   opacity: 1;
   transform: translateY(0%) rotateZ(0deg);
-  margin-top: 0.1rem;
 }
 
 .dark{
