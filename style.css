@@ -5,6 +5,10 @@
 
 body {
   background: #e5eaf1;
+
+  /* Smooth background color transition when toggling between
+     day and night modes */
+
   transition: background-color 1s;
 }
 
@@ -214,13 +218,13 @@ p {
   top: calc(100% + 1.2rem);
   right: 0;
   background: #e5eaf1;
-  width: 18rem;
+  width: 16rem;
   height: 25rem;
   display: none;
   border-radius: 2%;
   box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
   opacity: 93%;
-  padding: 2rem 1rem;
+  /* padding: 1rem 1rem; */
   
 }
 
@@ -250,6 +254,9 @@ p {
 /* Dark/light mode toggle button */
 
 /* Use opacity and translate/transform to create button toggle effect */
+
+#darkModeButtonContainer {
+}
 
 #sunButtonSvg {
   fill: #3f4145;
@@ -291,6 +298,7 @@ p {
 .moonLogoAnimate {
   opacity: 1;
   transform: translateY(0%) rotateZ(0deg);
+  margin-top: 0.1rem;
 }
 
 .dark{
@@ -334,4 +342,52 @@ p {
   .backToTheTopButton {
     right: 15%;
   }
+}
+
+/* Info button */
+
+#infoButtonSvg {
+  fill:#3f4145;
+  fill-opacity: 0.666667;
+  stroke-width: 1.18911;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 13%;
+}
+
+#path1698 {
+  fill: #3f4145;
+  fill-opacity: 1;
+  stroke: #3f4145;
+  stroke-width: 0.219531;
+  stroke-opacity: 1;
+}
+
+#infoButton {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  height: 2rem;
+  width: 100%;
+  color: #3f4145;
+  margin-top: 5%;
+}
+
+#infoButton:hover {
+  background: #c8cad2;
+}
+
+#infoButton:active {
+  background: #d6d8e1;
+}
+
+#infoButtonText {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  margin-left: 5%;
 }

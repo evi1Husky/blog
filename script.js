@@ -131,3 +131,9 @@ document.getElementById("darkModeButtonContainer").addEventListener("click", () 
   document.getElementById("moonLogo").classList.toggle("moonLogoAnimate");
   document.querySelector("body").classList.toggle("dark");
 })
+
+// Info button
+
+document.getElementById("infoButton").addEventListener("click", () => {
+  console.log('some stuff about this blog');
+})
