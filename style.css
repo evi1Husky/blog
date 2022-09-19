@@ -9,7 +9,6 @@ body {
   /* Smooth background color transition when toggling between
      day and night modes */
 
-  transition: background-color 1s;
 }
 
 /* Set box sizing to border box for better element sizing control */
@@ -218,7 +217,7 @@ p {
   top: calc(100% + 1.2rem);
   right: 0;
   background: #e5eaf1;
-  width: 19rem;
+  width: 18rem;
   height: 25rem;
   display: none;
   border-radius: 2%;
@@ -279,7 +278,6 @@ p {
 .sunLogo {
   opacity: 1;
   transform: translateY(0) rotateZ(0deg);
-  transition: all 1s ease-out;
 }
 
 .moonLogo {
@@ -287,7 +285,6 @@ p {
   position: absolute;
   opacity: 0;
   transform: translateY(20%) rotateZ(50deg);
-  transition: all 1s ease-out;
 }
 
 .sunLogoAnimate {
@@ -301,46 +298,36 @@ p {
 }
 
 .dark{
-  background-color: black;
+  background: black;
 }
 
-/* media queries for small browser windows */
 
-@media (max-width: 710px) {
-
-  .articleContainer {
-    width: 90%;
-  }
-
-  .line::after {
-    width: 80%;
-  }
+.sunLogoDark {
+  opacity: 0;
+  transform: translateY(20%) rotateZ(100deg);
 
 }
 
-/* adjust line margins for safari */
+.moonLogoDark {
+  inset: 0;
+  position: absolute;
+  opacity: 1;
+  transform: translateY(0%) rotateZ(0deg);
 
-@media not all and (min-resolution:.001dpcm) { 
-  .line {
-    margin-top: 2rem;
-    margin-bottom: 3.3rem;
-  }
 }
 
-/* media queries for desktop browsers */
+.sunLogoAnimateDark {
+  opacity: 1;
+  transform: translateY(0) rotateZ(0deg);
+}
 
-@media (min-width: 900px) {
-  .headerButtons {
-    right: 15%;
-  }
+.moonLogoAnimateDark {
+  opacity: 0;
+  transform: translateY(20%) rotateZ(50deg);
+}
 
-  #darkModeButtonContainer {
-    margin-right: 1.5rem;
-  }
-
-  .backToTheTopButton {
-    right: 15%;
-  }
+.darkDark{
+  background: #e5eaf1;
 }
 
 /* Info button */
@@ -386,4 +373,43 @@ p {
   font-family: 'Inconsolata', monospace;
   font-size: 1.2rem;
   margin-left: 5%;
+}
+
+/* media queries for small browser windows */
+
+@media (max-width: 710px) {
+
+  .articleContainer {
+    width: 90%;
+  }
+
+  .line::after {
+    width: 80%;
+  }
+
+}
+
+/* adjust line margins for safari */
+
+@media not all and (min-resolution:.001dpcm) { 
+  .line {
+    margin-top: 2rem;
+    margin-bottom: 3.3rem;
+  }
+}
+
+/* media queries for desktop browsers */
+
+@media (min-width: 900px) {
+  .headerButtons {
+    right: 15%;
+  }
+
+  #darkModeButtonContainer {
+    margin-right: 1.5rem;
+  }
+
+  .backToTheTopButton {
+    right: 15%;
+  }
 }

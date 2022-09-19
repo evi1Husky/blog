@@ -122,18 +122,53 @@ down menu */
   }
 })();
 
-// Dark/light mode toggle button
-
-/* toggle classes to animate buttons and change web page color scheme */
-
-document.getElementById("darkModeButtonContainer").addEventListener("click", () => {
-  document.getElementById("sunLogo").classList.toggle("sunLogoAnimate");
-  document.getElementById("moonLogo").classList.toggle("moonLogoAnimate");
-  document.querySelector("body").classList.toggle("dark");
-})
-
 // Info button
 
 document.getElementById("infoButton").addEventListener("click", () => {
   console.log('some stuff about this blog');
+})
+
+// Dark/light mode toggle button
+
+/* Toggle classes to animate buttons and change web page color scheme.
+
+ Use local storage to save theme preference, on page open adjust button 
+ animation based on preferred theme.
+
+ For the first page visit set preferred theme according to OS settings. */
+
+if (window.localStorage.length === 0 && window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStorage.setItem('preferredTheme', 'dark');
+}
+
+const preferredTheme = localStorage.getItem('preferredTheme');
+if (preferredTheme === 'dark') {
+  document.getElementById("moonLogo").classList.toggle("moonLogoDark");
+  document.getElementById("sunLogo").classList.toggle("sunLogoDark");
+  document.querySelector("body").classList.toggle("dark");
+}
+
+document.getElementById("darkModeButtonContainer").addEventListener("click", () => {
+  document.querySelector("body").style.transition = 'background-color 1s';
+  document.getElementById("moonLogo").style.transition = 'all 1s ease-out';
+  document.getElementById("sunLogo").style.transition = 'all 1s ease-out';
+
+  const moon = document.getElementById("moonLogo");
+  if (preferredTheme === 'dark') {
+    document.getElementById("sunLogo").classList.toggle("sunLogoAnimateDark");
+    moon.classList.toggle("moonLogoAnimateDark");
+    document.querySelector("body").classList.toggle("dark");
+  } else {
+  document.getElementById("sunLogo").classList.toggle("sunLogoAnimate");
+  moon.classList.toggle("moonLogoAnimate");
+  document.querySelector("body").classList.toggle("dark");
+  }
+  const style = getComputedStyle(moon)
+  const opacity = style.opacity;
+  if (opacity === '0') {
+    localStorage.setItem('preferredTheme', 'dark');
+  } else {
+    localStorage.setItem('preferredTheme', 'light');
+  }
 })
