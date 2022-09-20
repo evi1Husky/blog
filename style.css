@@ -15,7 +15,7 @@
   --activeColor: #d6d8e1;
   --dateColor: #575a5e;
   --font: 'Roboto Flex', sans-serif;
-  --paragraphFontWeight: 400;
+  --paragraphFontWeight: 300;
 }
 
 .dark{
@@ -80,6 +80,7 @@ html {
 
 .header::after {
   background-color: var(--headerLineColor);
+  transition: background-color 1s;
   content: '';
   display: block;
   height: 1px;
@@ -91,6 +92,7 @@ html {
 }
 
 .headerText {
+  transition: color 1s;
   font-family: var(--font);
   font-weight: 500;
   font-size: 2.5rem;
@@ -122,10 +124,12 @@ html {
   transform: translate(-50%, 0);
   width: 95%;
   margin-bottom: 2.5rem;
+  transition: background-color 1s;
 }
 
 #link {
   color: var(--footerTextColor);
+  transition: color 1s;
   font-family: var(--font);
   font-weight: 500;
   font-size: 0.844rem;
@@ -141,16 +145,19 @@ html {
   font-family: var(--font);
   color: var(--textColor);
   width: 40rem;
+  transition: color 2s;
 }
 
 /* article elements formatting */
 
 h2 {
+  font-weight: 500;
   margin-top: 2.7rem;
   font-size: 2rem;
 }
 
 h3 {
+  font-weight: 400;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
@@ -174,6 +181,7 @@ p {
 
 .line::after {
   background-color: var(--articleDecoratorLine);
+  transition: background-color 1s;
   content: '';
   display: block;
   height: 1px;
@@ -193,6 +201,7 @@ p {
 
 #path354 {
   fill: var(--pfpSvg);
+  transition: fill 1s;
   fill-opacity:1;
 }
 
@@ -210,6 +219,7 @@ p {
 .publishingDate {
   font-size: 0.9rem;
   color: var(--dateColor);
+  transition: color 1s;
 }
 
 /* position header buttons using flex box and right properties */
@@ -243,15 +253,18 @@ p {
 
 #path9360 {
   fill: var(--svgColor);
+  transition: fill 1s;
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
 }
 
 #rect11912 {
   fill: var(--svgColor);
+  transition: fill 1s;
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: var(--svgColor);
+  transition: stroke 1s;
   stroke-width: 0.25;
   stroke-dasharray: none;
   stroke-opacity: 1
@@ -269,6 +282,7 @@ p {
   top: calc(100% + 1.2rem);
   right: 0;
   background: var(--menuColor);
+  transition: background-color 1s;
   width: 18rem;
   height: 25rem;
   display: none;
@@ -305,6 +319,8 @@ p {
 #path9360 {
   fill: var(--svgColor);
   stroke: var(--svgColor);
+  transition: fill 1s;
+  transition: stroke 1s;
   fill-opacity:0.666667;
   stroke-width:1.18911
 }
@@ -312,6 +328,8 @@ p {
 #rect11912 {
   fill: var(--svgColor);
   stroke: var(--svgColor);
+  transition: fill 1s;
+  transition: stroke 1s;
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke-width: 0.25;
@@ -326,12 +344,14 @@ p {
 #sunButtonSvg {
   fill: var(--svgColor);
   stroke: var(--svgColor);
+  transition: fill 1s;
   stroke-width:0.25;
 }
 
 #moonButtonSvg {
   fill: var(--svgColor);
   stroke: var(--svgColor);
+  transition: fill 1s;
   stroke-width:0.264523;
 }
 
@@ -436,7 +456,7 @@ p {
 /* All articles button  */
 
 #allArticlesButtonSvg {
-  fill:#3f4145;
+  fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
   margin-left: 8%;
