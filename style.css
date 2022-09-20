@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
+
 :root {
   --backgroundColor: #e2e7f2;
   --textColor: #3f4145;
   --svgColor: #3f4145;
+  --menuSvg: #3f4145;
+  --pfpSvg: #b161f2;
   --headerLineColor: #3f4145;
   --menuColor: #e2e7f2;
   --footerTextColor: #4c4e53;
@@ -9,19 +13,27 @@
   --articleDecoratorLine: #7f828a;
   --hoverColor: #c8cad2;
   --activeColor: #d6d8e1;
+  --dateColor: #575a5e;
+  --font: 'Roboto Flex', sans-serif;
+  --paragraphFontWeight: 400;
 }
 
 .dark{
-  --backgroundColor: black;
-  --textColor: #3f4145;
-  --svgColor: #3f4145;
-  --headerLineColor: #3f4145;
-  --menuColor: #121314;
-  --footerTextColor: #4c4e53;
-  --footerLineColor: #4c4e53;
-  --articleDecoratorLine: #7f828a;
-  --hoverColor: #c8cad2;
-  --activeColor: #d6d8e1;
+  --backgroundColor: #24272c;
+  --textColor: #9AA2B2;
+  --svgColor: #c073ff;
+  --menuSvg: #9AA2B2;
+  --pfpSvg: #5adea5;
+  --headerLineColor: #666B74;
+  --menuColor: #1E2127;
+  --footerTextColor: #666B74;
+  --footerLineColor: #666B74;
+  --articleDecoratorLine: #666B74;
+  --hoverColor: #666B74;
+  --activeColor: #9AA2B2;
+  --dateColor: #666B74;
+  --font: 'Roboto Flex', sans-serif;
+  --paragraphFontWeight: 300;
 }
 
 * {
@@ -79,8 +91,8 @@ html {
 }
 
 .headerText {
-  font-family: 'Inconsolata', monospace;
-  font-weight: 400;
+  font-family: var(--font);
+  font-weight: 500;
   font-size: 2.5rem;
   color: var(--textColor);
   margin-top: 0.8rem;
@@ -114,7 +126,7 @@ html {
 
 #link {
   color: var(--footerTextColor);
-  font-family: 'Inconsolata', monospace;
+  font-family: var(--font);
   font-weight: 500;
   font-size: 0.844rem;
   text-decoration: none;
@@ -126,7 +138,7 @@ html {
 .articleContainer {
   margin-top: 5rem;
   margin-bottom: 4rem;
-  font-family: 'Inconsolata', monospace;
+  font-family: var(--font);
   color: var(--textColor);
   width: 40rem;
 }
@@ -145,8 +157,9 @@ h3 {
 }
 
 p {
+  font-weight: var(--paragraphFontWeight);
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* add an article decoration line after paragraphs */
@@ -178,8 +191,9 @@ p {
   flex-direction: row;
 }
 
-.authorsPfp {
-  border-radius: 1.9rem;
+#path354 {
+  fill: var(--pfpSvg);
+  fill-opacity:1;
 }
 
 .nameDate {
@@ -195,7 +209,7 @@ p {
 
 .publishingDate {
   font-size: 0.9rem;
-  color: #575a5e
+  color: var(--dateColor);
 }
 
 /* position header buttons using flex box and right properties */
@@ -205,7 +219,7 @@ p {
   right: 5%;
   display: flex;
   flex-direction: row;
-  margin-top: 1.6rem;
+  margin-top: 1.1rem;
   justify-content: space-evenly;
  }
  /* Drop down menu */
@@ -376,16 +390,16 @@ p {
 /* Info button */
 
 #infoButtonSvg {
-  fill: var(--svgColor);
+  fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
   margin-left: 8%;
 }
 
 #path1698 {
-  fill: var(--svgColor);
+  fill: var(--menuSvg);
   fill-opacity: 1;
-  stroke: var(--svgColor);
+  stroke: var(--menuSvg);
   stroke-width: 0.219531;
   stroke-opacity: 1;
 }
@@ -400,7 +414,7 @@ p {
   background: none;
   height: 2rem;
   width: 100%;
-  color: var(--textColor);
+  color: var(--menuSvg);
   margin-top: 5%;
   opacity: 100%;
 }
@@ -414,7 +428,7 @@ p {
 }
 
 #infoButtonText {
-  font-family: 'Inconsolata', monospace;
+  font-family: var(--font);
   font-size: 1.2rem;
   margin-left: 9%;
 }
@@ -429,15 +443,15 @@ p {
 }
 
 #path9360 {
-  fill: var(--svgColor);
+  fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
 }
 
 #rect521 {
-  fill: var(--svgColor);
+  fill: var(--menuSvg);
   fill-opacity: 1;
-  stroke: var(--svgColor);
+  stroke: var(--menuSvg);
   stroke-width: 0;
   stroke-opacity: 1
 }
@@ -466,7 +480,7 @@ p {
 }
 
 #allArticlesButtonText {
-  font-family: 'Inconsolata', monospace;
+  font-family: var(--font);
   font-size: 1.2rem;
   margin-left: 9%;
 }
