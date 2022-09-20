@@ -1,14 +1,36 @@
+:root {
+  --backgroundColor: #e2e7f2;
+  --textColor: #3f4145;
+  --svgColor: #3f4145;
+  --headerLineColor: #3f4145;
+  --menuColor: #e2e7f2;
+  --footerTextColor: #4c4e53;
+  --footerLineColor: #4c4e53;
+  --articleDecoratorLine: #7f828a;
+  --hoverColor: #c8cad2;
+  --activeColor: #d6d8e1;
+}
+
+.dark{
+  --backgroundColor: black;
+  --textColor: #3f4145;
+  --svgColor: #3f4145;
+  --headerLineColor: #3f4145;
+  --menuColor: #121314;
+  --footerTextColor: #4c4e53;
+  --footerLineColor: #4c4e53;
+  --articleDecoratorLine: #7f828a;
+  --hoverColor: #c8cad2;
+  --activeColor: #d6d8e1;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #e5eaf1;
-
-  /* Smooth background color transition when toggling between
-     day and night modes */
-
+  background: var(--backgroundColor);
 }
 
 /* Set box sizing to border box for better element sizing control */
@@ -45,7 +67,7 @@ html {
 }
 
 .header::after {
-  background-color: #3f4145;
+  background-color: var(--headerLineColor);
   content: '';
   display: block;
   height: 1px;
@@ -60,7 +82,7 @@ html {
   font-family: 'Inconsolata', monospace;
   font-weight: 400;
   font-size: 2.5rem;
-  color: #3f4145;
+  color: var(--textColor);
   margin-top: 0.8rem;
   justify-self: center;
   align-self: center;
@@ -79,7 +101,7 @@ html {
 }
 
 .footer::after {
-  background-color: #4c4e53;
+  background-color: var(--footerLineColor);
   content: '';
   display: block;
   height: 1px;
@@ -91,7 +113,7 @@ html {
 }
 
 #link {
-  color: #4c4e53;
+  color: var(--footerTextColor);
   font-family: 'Inconsolata', monospace;
   font-weight: 500;
   font-size: 0.844rem;
@@ -105,7 +127,7 @@ html {
   margin-top: 5rem;
   margin-bottom: 4rem;
   font-family: 'Inconsolata', monospace;
-  color: #3f4145;
+  color: var(--textColor);
   width: 40rem;
 }
 
@@ -138,7 +160,7 @@ p {
 }
 
 .line::after {
-  background-color: #7f828a;
+  background-color: var(--articleDecoratorLine);
   content: '';
   display: block;
   height: 1px;
@@ -205,6 +227,22 @@ p {
   background: transparent;
 }
 
+#path9360 {
+  fill: var(--svgColor);
+  fill-opacity: 0.666667;
+  stroke-width: 1.18911;
+}
+
+#rect11912 {
+  fill: var(--svgColor);
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  stroke: var(--svgColor);
+  stroke-width: 0.25;
+  stroke-dasharray: none;
+  stroke-opacity: 1
+}
+
 #svgContainerMenu {
   border: 0;
   background: transparent;
@@ -216,13 +254,13 @@ p {
   position: absolute;
   top: calc(100% + 1.2rem);
   right: 0;
-  background: #e5eaf1;
+  background: var(--menuColor);
   width: 18rem;
   height: 25rem;
   display: none;
-  border-radius: 2%;
+  border-radius: 0.7%;
   box-shadow: 0.3px 0.3px 6px rgba(0,0,0,0.2);
-  opacity: 93%;
+  opacity: 90%;
   /* padding: 1rem 1rem; */
   
 }
@@ -250,27 +288,40 @@ p {
   transform: rotate(-90deg);
 }
 
+#path9360 {
+  fill: var(--svgColor);
+  stroke: var(--svgColor);
+  fill-opacity:0.666667;
+  stroke-width:1.18911
+}
+
+#rect11912 {
+  fill: var(--svgColor);
+  stroke: var(--svgColor);
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  stroke-width: 0.25;
+  stroke-dasharray: none;
+  stroke-opacity: 1
+}
+
 /* Dark/light mode toggle button */
 
 /* Use opacity and translate/transform to create button toggle effect */
 
-#darkModeButtonContainer {
-}
-
 #sunButtonSvg {
-  fill: #3f4145;
-  stroke:#3f4145;
+  fill: var(--svgColor);
+  stroke: var(--svgColor);
   stroke-width:0.25;
 }
 
 #moonButtonSvg {
-  fill:#3f4145;
-  stroke:#3f4145;
+  fill: var(--svgColor);
+  stroke: var(--svgColor);
   stroke-width:0.264523;
 }
 
 .sunLogo, .moonLogo {
-  font-size: 2rem;
   width: fit-content;
   height: fit-content;
 }
@@ -295,10 +346,6 @@ p {
 .moonLogoAnimate {
   opacity: 1;
   transform: translateY(0%) rotateZ(0deg);
-}
-
-.dark{
-  background: black;
 }
 
 
@@ -326,23 +373,19 @@ p {
   transform: translateY(20%) rotateZ(50deg);
 }
 
-.darkDark{
-  background: #e5eaf1;
-}
-
 /* Info button */
 
 #infoButtonSvg {
-  fill:#3f4145;
+  fill: var(--svgColor);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
-  margin-left: 13%;
+  margin-left: 8%;
 }
 
 #path1698 {
-  fill: #3f4145;
+  fill: var(--svgColor);
   fill-opacity: 1;
-  stroke: #3f4145;
+  stroke: var(--svgColor);
   stroke-width: 0.219531;
   stroke-opacity: 1;
 }
@@ -357,22 +400,75 @@ p {
   background: none;
   height: 2rem;
   width: 100%;
-  color: #3f4145;
+  color: var(--textColor);
   margin-top: 5%;
+  opacity: 100%;
 }
 
 #infoButton:hover {
-  background: #c8cad2;
+  background: var(--hoverColor);
 }
 
 #infoButton:active {
-  background: #d6d8e1;
+  background: var(--activeColor);
 }
 
 #infoButtonText {
   font-family: 'Inconsolata', monospace;
   font-size: 1.2rem;
-  margin-left: 5%;
+  margin-left: 9%;
+}
+
+/* All articles button  */
+
+#allArticlesButtonSvg {
+  fill:#3f4145;
+  fill-opacity: 0.666667;
+  stroke-width: 1.18911;
+  margin-left: 8%;
+}
+
+#path9360 {
+  fill: var(--svgColor);
+  fill-opacity: 0.666667;
+  stroke-width: 1.18911;
+}
+
+#rect521 {
+  fill: var(--svgColor);
+  fill-opacity: 1;
+  stroke: var(--svgColor);
+  stroke-width: 0;
+  stroke-opacity: 1
+}
+
+#allArticlesButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  height: 2rem;
+  width: 100%;
+  color: var(--textColor);
+  opacity: 100%;
+  margin-top: 18%;
+}
+
+#allArticlesButton:hover {
+  background: var(--hoverColor);
+}
+
+#allArticlesButton:active {
+  background: var(--activeColor);
+}
+
+#allArticlesButtonText {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2rem;
+  margin-left: 9%;
 }
 
 /* media queries for small browser windows */

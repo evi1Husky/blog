@@ -43,23 +43,23 @@ down menu */
     });
     if ("ontouchstart" in document.documentElement) {
       menuButton.addEventListener('touchstart', function() {
-        menuButtonSvg.style.background = '#c8cad2';
+        menuButtonSvg.style.background = 'var(--hoverColor)';
       });
       menuButton.addEventListener('touchend', function() {
         menuButtonSvg.style.background = 'transparent';
     });
     } else {
       menuButton.addEventListener('mouseover', function() {
-        menuButtonSvg.style.background = '#c8cad2';
+        menuButtonSvg.style.background = 'var(--hoverColor)';
       });
       menuButton.addEventListener('mouseout', function() {
         menuButtonSvg.style.background = 'transparent';
       });
       menuButton.addEventListener('mousedown', function() {
-        menuButtonSvg.style.background = '#d6d8e1';
+        menuButtonSvg.style.background = 'var(--activeColor)';
       });
       menuButton.addEventListener('mouseup', function() {
-        menuButtonSvg.style.background = '#c8cad2';
+        menuButtonSvg.style.background = 'var(--hoverColor)';
       });
     }
   })();
@@ -100,24 +100,24 @@ down menu */
   });
   if ("ontouchstart" in document.documentElement) {
     backToTheTopButton.addEventListener('touchstart', function() {
-      toTheTop.style.background = '#c8cad2';
+      toTheTop.style.background = 'var(--hoverColor)';
     });
     backToTheTopButton.addEventListener('touchend', function() {
       toTheTop.style.background = 'transparent';
     });
   } else {
     backToTheTopButton.addEventListener('mouseover', function() {
-      toTheTop.style.background = '#c8cad2';
+      toTheTop.style.background = 'var(--hoverColor)';
     });
     backToTheTopButton.addEventListener('mouseout', function() {
       toTheTop.style.background = 'transparent';
       backToTheTopButton.style.background = 'transparent';
     });
     backToTheTopButton.addEventListener('mousedown', function() {
-      toTheTop.style.background = '#d6d8e1';
+      toTheTop.style.background = 'var(--activeColor)';
     });
     backToTheTopButton.addEventListener('mouseup', function() {
-      toTheTop.style.background = '#c8cad2';
+      toTheTop.style.background = 'var(--hoverColor)';
   });
   }
 })();
@@ -131,11 +131,9 @@ document.getElementById("infoButton").addEventListener("click", () => {
 // Dark/light mode toggle button
 
 /* Toggle classes to animate buttons and change web page color scheme.
-
  Use local storage to save theme preference, on page open adjust button 
- animation based on preferred theme.
-
- For the first page visit set preferred theme according to OS settings. */
+ animation based on preferred theme. For the first page visit set preferred
+ preferred theme according to OS settings. */
 
 if (window.localStorage.length === 0 && window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -146,23 +144,22 @@ const preferredTheme = localStorage.getItem('preferredTheme');
 if (preferredTheme === 'dark') {
   document.getElementById("moonLogo").classList.toggle("moonLogoDark");
   document.getElementById("sunLogo").classList.toggle("sunLogoDark");
-  document.querySelector("body").classList.toggle("dark");
+  document.querySelector(":root").classList.toggle("dark");
 }
 
 document.getElementById("darkModeButtonContainer").addEventListener("click", () => {
   document.querySelector("body").style.transition = 'background-color 1s';
   document.getElementById("moonLogo").style.transition = 'all 1s ease-out';
   document.getElementById("sunLogo").style.transition = 'all 1s ease-out';
-
   const moon = document.getElementById("moonLogo");
   if (preferredTheme === 'dark') {
     document.getElementById("sunLogo").classList.toggle("sunLogoAnimateDark");
     moon.classList.toggle("moonLogoAnimateDark");
-    document.querySelector("body").classList.toggle("dark");
+    document.querySelector(":root").classList.toggle("dark");
   } else {
   document.getElementById("sunLogo").classList.toggle("sunLogoAnimate");
   moon.classList.toggle("moonLogoAnimate");
-  document.querySelector("body").classList.toggle("dark");
+  document.querySelector(":root").classList.toggle("dark");
   }
   const style = getComputedStyle(moon)
   const opacity = style.opacity;
@@ -171,4 +168,10 @@ document.getElementById("darkModeButtonContainer").addEventListener("click", () 
   } else {
     localStorage.setItem('preferredTheme', 'light');
   }
+})
+
+// All articles button
+
+document.getElementById("allArticlesButton").addEventListener("click", () => {
+  console.log('list with all articles');
 })
