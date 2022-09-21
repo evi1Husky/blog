@@ -113,6 +113,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0.6rem;
 }
 
 .footer::after {
@@ -336,11 +337,13 @@ p {
   margin-top: 0.95rem;
   background: var(--menuColor);
   transition: background-color 1s;
-  width: 25rem;
+  width: 23rem;
   height: 100vh;
   min-width: 15rem;
   display: none;
   flex-direction: column;
+  position: sticky;
+  top: 0;
   /* border-top: 1px solid var(--footerLineColor); */
 }
 
