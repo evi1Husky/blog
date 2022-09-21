@@ -8,7 +8,7 @@
   --menuSvg: #3f4145;
   --pfpSvg: #b161f2;
   --headerLineColor: #3f4145;
-  --menuColor: #cfd3dd;
+  --menuColor: #d6d8e1;
   --footerTextColor: #4c4e53;
   --footerLineColor: #4c4e53;
   --articleDecoratorLine: #7f828a;
@@ -331,7 +331,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
+} 
 
 .dropDownMenu {
   margin-top: 0.95rem;
@@ -344,8 +344,8 @@ p {
   flex-direction: column;
   position: sticky;
   top: 0;
-  /* border-top: 1px solid var(--footerLineColor); */
-}
+  /* border-top: 1px solid var(--headerLineColor); */
+} 
 
 /* Dark/light mode toggle button */
 
@@ -489,7 +489,7 @@ p {
   width: 100%;
   color: var(--textColor);
   opacity: 100%;
-  margin-top: 8%;
+  margin-top: 4%;
 }
 
 #allArticlesButton:hover {
@@ -512,6 +512,73 @@ p {
   .line::after {
     width: 80%;
   }
+}
+
+/* Move the menu on top of the article using flex reverse property when browser 
+ width decreases, adjust menu layout for mobile browsers */
+
+@media (max-width: 550px) {
+  .menu-ArticleContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .dropDownMenu {
+    margin-top: 0.85rem;
+    height: 12rem;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    border-top: 1px solid var(--headerLineColor);
+  }
+
+  .articleContainer {
+    width: 93%;
+  }
+
+  #allArticlesButton {
+    justify-content: center;
+    margin-top: 4%;
+  }
+
+  #allArticlesButtonSvg {
+    margin-left: 0%;
+    margin-right: 0.5rem;
+  }
+
+  #allArticlesButtonText {
+    margin-left: 3%;
+    margin-right: 3.6rem;
+  }
+
+  #infoButton {
+    justify-content: center;
+    margin-top: 6%;
+  }
+
+  #infoButtonText {
+    margin-left: 3%;
+    margin-right: 2rem;
+  }
+
+  #infoButtonSvg {
+    margin-left: 3%;
+    margin-right: 0.5rem;
+  }
+
+  #darkModeButtonContainer {
+    margin-left: 47%;
+    margin-bottom: 1rem;
+    margin-top: 1.3rem;
+  }
+
+  .articleContainer {
+    margin-top: 3.7rem;
+    margin-bottom: 3rem;
+  }
+
 }
 
 /* adjust line margins for safari */

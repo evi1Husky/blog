@@ -16,29 +16,18 @@ down menu */
     if (display === 'none') {
       dropDownMenu.style.display = 'flex';
       container.style.justifyContent = 'flex-end';
-      // if (window.matchMedia("(min-width: 720px)").matches) {
-      //   document.querySelector(".articleContainer").style.marginLeft = '3%';
-      // }
     } else {
       dropDownMenu.style.display = 'none';
       container.style.justifyContent = 'center';
-      // if (window.matchMedia("(min-width: 720px)").matches) {
-      //   document.querySelector(".articleContainer").style.marginLeft = '0%';
-      // }
     }
   });
   document.addEventListener('click', function(e) {
     if (e.target !== menuButton && e.target !== dropDownMenu) {
       dropDownMenu.style.display = 'none';
       container.style.justifyContent = 'center';
-      // if (window.matchMedia("(min-width: 720px)").matches) {
-      //   document.querySelector(".articleContainer").style.marginLeft = '0%';
-      // }
     }
   });
 })();
-
-// @media (max-width: 710px)
 
 /* rotate menu button on click and change background on mouseover,
  check if mobile browser to assign different event listeners */
@@ -190,3 +179,4 @@ document.getElementById("darkModeButtonContainer").addEventListener("click", () 
 document.getElementById("allArticlesButton").addEventListener("click", () => {
   console.log('list with all articles');
 })
+
