@@ -126,12 +126,6 @@ down menu */
   }
 })();
 
-// Info button
-
-document.getElementById("infoButton").addEventListener("click", () => {
-  console.log('some stuff about this blog');
-})
-
 // Dark/light mode toggle button
 
 /* Toggle classes to animate buttons and change web page color scheme.
@@ -180,3 +174,8 @@ document.getElementById("allArticlesButton").addEventListener("click", () => {
   console.log('list with all articles');
 })
 
+// Info button
+
+document.getElementById("infoButton").addEventListener("click", () => {
+  console.log('some stuff about this blog');
+})

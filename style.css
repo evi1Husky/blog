@@ -142,28 +142,34 @@ html {
 /* container for blog articles */
 
 .articleContainer {
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 4rem;
   font-family: var(--font);
   color: var(--textColor);
-  width: 40rem;
+  width: 42rem;
   transition: color 2s;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* article elements formatting */
 
 h2 {
   font-weight: 500;
-  margin-top: 2.7rem;
+  margin-top: 2rem;
   font-size: 2rem;
 }
 
 h3 {
   font-weight: 400;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.3rem;
   font-size: 1.5rem;
 }
 
@@ -176,23 +182,9 @@ p {
 /* add an article decoration line after paragraphs */
 
 .line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.line::after {
-  background-color: var(--articleDecoratorLine);
-  transition: background-color 1s;
-  content: '';
-  display: block;
-  height: 1px;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, 0);
-  width: 35rem;
+  border-bottom: 1px solid var(--articleDecoratorLine);
+  width: 80%;
+  margin-top: 1.7rem;
 }
 
 /* html element with author's info: pfp, name and article   
@@ -508,16 +500,10 @@ p {
 
 /* media queries for small browser windows */
 
-@media (max-width: 710px) {
-  .line::after {
-    width: 80%;
-  }
-}
-
 /* Move the menu on top of the article using flex reverse property when browser 
  width decreases, adjust menu layout for mobile browsers */
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   .menu-ArticleContainer {
     display: flex;
     flex-direction: column-reverse;
@@ -526,7 +512,7 @@ p {
 
   .dropDownMenu {
     margin-top: 0.84rem;
-    height: 12rem;
+    height: 13rem;
     width: 100%;
     flex-direction: column;
     position: relative;
@@ -535,7 +521,7 @@ p {
   }
 
   .articleContainer {
-    width: 93%;
+    width: 90%;
   }
 
   #allArticlesButton {
@@ -570,24 +556,10 @@ p {
 
   #darkModeButtonContainer {
     margin-left: 47%;
-    margin-bottom: 1rem;
-    margin-top: 1.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.6rem;
   }
 
-  .articleContainer {
-    margin-top: 3.7rem;
-    margin-bottom: 3rem;
-  }
-
-}
-
-/* adjust line margins for safari */
-
-@media not all and (min-resolution:.001dpcm) { 
-  .line {
-    margin-top: 2rem;
-    margin-bottom: 3.3rem;
-  }
 }
 
 /* media queries for desktop browsers */
