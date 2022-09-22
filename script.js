@@ -10,6 +10,11 @@ down menu */
   const menuButton = document.getElementById('svgContainerMenu');
   const dropDownMenu = document.querySelector('.dropDownMenu');
   const container = document.querySelector('.menu-ArticleContainer');
+  const darkModeButton = document.getElementById('darkModeButtonContainer');
+  const sunLogo = document.getElementById('sunLogo');
+  const moonLogo = document.getElementById('moonLogo');
+  const sunButtonSvg = document.getElementById('sunButtonSvg');
+  const moonButtonSvg = document.getElementById('moonButtonSvg');
   menuButton.addEventListener('click', function() {
     const style = getComputedStyle(dropDownMenu)
     const display = style.display;
@@ -22,7 +27,10 @@ down menu */
     }
   });
   document.addEventListener('click', function(e) {
-    if (e.target !== menuButton && e.target !== dropDownMenu) {
+    if (e.target !== menuButton && e.target !== dropDownMenu
+      && e.target !== darkModeButton && e.target !== sunLogo
+      && e.target !== moonLogo && e.target !== sunButtonSvg
+      && e.target !== moonButtonSvg) {
       dropDownMenu.style.display = 'none';
       container.style.justifyContent = 'center';
     }

@@ -329,7 +329,7 @@ p {
   margin-top: 0.95rem;
   background: var(--menuColor);
   transition: background-color 1s;
-  width: 23rem;
+  width: 25rem;
   height: 100vh;
   min-width: 15rem;
   display: none;
@@ -356,6 +356,7 @@ p {
   stroke: var(--svgColor);
   transition: fill 1s;
   stroke-width:0.25;
+  pointer-events: none;
 }
 
 #moonButtonSvg {
@@ -363,6 +364,7 @@ p {
   stroke: var(--moonColor);
   transition: fill 1s;
   stroke-width:0.264523;
+  pointer-events: none;
 }
 
 .sunLogo {
@@ -406,7 +408,7 @@ p {
   fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
-  margin-left: 8%;
+  margin-left: 13%;
 }
 
 #path1698 {
@@ -428,7 +430,6 @@ p {
   height: 2rem;
   width: 100%;
   color: var(--textColor);
-  opacity: 100%;
   margin-top: 10%;
 }
 
@@ -443,7 +444,7 @@ p {
 #infoButtonText {
   font-family: var(--font);
   font-size: 1.2rem;
-  margin-left: 17%;
+  margin-left: 8%;
 }
 
 /* All articles button  */
@@ -452,7 +453,7 @@ p {
   fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
-  margin-left: 8%;
+  margin-left: 13%;
 }
 
 #path9360 {
@@ -480,7 +481,6 @@ p {
   height: 2rem;
   width: 100%;
   color: var(--textColor);
-  opacity: 100%;
   margin-top: 4%;
 }
 
@@ -495,7 +495,46 @@ p {
 #allArticlesButtonText {
   font-family: var(--font);
   font-size: 1.2rem;
-  margin-left: 17%;
+  margin-left: 8%;
+}
+
+/* Link to github repo button */
+
+#externalLinkButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  height: 2rem;
+  width: 100%;
+  color: var(--textColor);
+  margin-top: 4%;
+}
+
+#externalLinkButton:hover {
+  background: var(--hoverColor);
+}
+
+#externalLinkButton:active {
+  background: var(--activeColor);
+}
+
+#externalLinkBtnSvg {
+  fill: var(--menuSvg);
+  margin-left: 13%;
+}
+
+#rect234, #path10918, #path10888 {
+  fill: var(--menuSvg);
+}
+
+#externalLinkButtonText {
+  font-family: var(--font);
+  font-size: 1.2rem;
+  margin-left: 8%;
 }
 
 /* media queries for small browser windows */
@@ -503,7 +542,7 @@ p {
 /* Move the menu on top of the article using flex reverse property when browser 
  width decreases, adjust menu layout for mobile browsers */
 
-@media (max-width: 650px) {
+@media (max-width: 710px) {
   .menu-ArticleContainer {
     display: flex;
     flex-direction: column-reverse;
@@ -512,7 +551,7 @@ p {
 
   .dropDownMenu {
     margin-top: 0.84rem;
-    height: 13rem;
+    height: 15rem;
     width: 100%;
     flex-direction: column;
     position: relative;
@@ -526,36 +565,54 @@ p {
 
   #allArticlesButton {
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 1rem;
   }
 
   #allArticlesButtonSvg {
-    margin-left: 0%;
+    margin-left: 0rem;
     margin-right: 0.5rem;
   }
 
   #allArticlesButtonText {
-    margin-left: 3%;
+    margin-left: 1rem;
     margin-right: 3.6rem;
   }
 
   #infoButton {
     justify-content: center;
-    margin-top: 6%;
+    margin-top: 1.5rem;
   }
 
   #infoButtonText {
-    margin-left: 3%;
+    margin-left: 1rem;
     margin-right: 2rem;
   }
 
   #infoButtonSvg {
-    margin-left: 3%;
+    margin-left: 1rem;
     margin-right: 0.5rem;
   }
 
+  #externalLinkButton {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  #externalLinkBtnSvg {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  
+  #externalLinkButtonText {
+    margin-left: 1rem;
+    margin-right: 8rem;
+  }
+
   #darkModeButtonContainer {
-    margin-left: 47%;
+    margin-left: 0rem;
+    margin-right: 2rem;
+    align-self: center;
     margin-bottom: 1.5rem;
     margin-top: 1.6rem;
   }
