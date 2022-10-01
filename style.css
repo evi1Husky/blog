@@ -125,7 +125,7 @@ html {
   position: absolute;
   transform: translate(-50%, 0);
   width: 95%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.765rem;
   transition: background-color 1s;
 }
 
@@ -323,20 +323,20 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-} 
+}
 
 .dropDownMenu {
-  margin-top: 0.95rem;
+  margin-top: 0.86rem;
+  border-top: 0.07rem solid var(--headerLineColor);
   background: var(--menuColor);
   transition: background-color 1s;
-  width: 25rem;
+  width: 26%;
   height: 100vh;
-  min-width: 15rem;
+  min-width: 13rem;
   display: none;
   flex-direction: column;
   position: sticky;
   top: 0;
-  /* border-top: 1px solid var(--headerLineColor); */
 } 
 
 /* Dark/light mode toggle button */
@@ -550,13 +550,11 @@ p {
   }
 
   .dropDownMenu {
-    margin-top: 0.84rem;
     height: 15rem;
     width: 100%;
     flex-direction: column;
     position: relative;
     top: 0;
-    border-top: 1px solid var(--headerLineColor);
   }
 
   .articleContainer {
@@ -632,5 +630,19 @@ p {
 
   .backToTheTopButton {
     right: 15%;
+  }
+}
+
+@media (min-width: 1300px) {
+
+  .dropDownMenu {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .dropDownMenu {
+    width: 35%;
   }
 }
