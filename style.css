@@ -713,3 +713,10 @@ p {
     width: 35%;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  #searchBar {
+    border: 0;
+    border-bottom: 0;
+  }
+}
