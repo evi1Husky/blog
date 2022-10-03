@@ -673,7 +673,7 @@ p {
   #searchInput {
     margin-left: 3.2rem;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0rem;
   }
 
@@ -714,6 +714,8 @@ p {
   }
 }
 
+/* no search form decoration line for ios because safari is 
+   the new internet explorer and nothing is rendered in it properly */
 
 @media not all and (min-resolution:.001dpcm) { 
     #searchBar {
