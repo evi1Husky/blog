@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
 
+/* dark/light theme color settings */
+
 :root {
   --backgroundColor: #e2e7f2;
   --textColor: #3f4145;
@@ -15,8 +17,6 @@
   --hoverColor: #c8cad2;
   --activeColor: #d6d8e1;
   --dateColor: #575a5e;
-  --font: 'Roboto Flex', sans-serif;
-  --paragraphFontWeight: 300;
 }
 
 .dark {
@@ -34,8 +34,21 @@
   --hoverColor: #666B74;
   --activeColor: #9AA2B2;
   --dateColor: #666B74;
+}
+
+/* font settings */
+
+:root {
   --font: 'Roboto Flex', sans-serif;
   --paragraphFontWeight: 300;
+  --fontSizeHeader: 2rem;
+  --fontSizeFooter: 0.7rem;
+  --fontSizeParagraph: 1.17rem;
+  --fontSizeH2: 1.5rem;
+  --fontSizeH3: 1.3rem;
+  --fontSizeName: 0.9rem;
+  --fontSizeDate: 0.7rem;
+  --fontSizeMenu: 1rem;
 }
 
 * {
@@ -98,7 +111,7 @@ html {
   transition: color 1s;
   font-family: var(--font);
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: var(--fontSizeHeader);
   color: var(--textColor);
   margin-top: 0.8rem;
   justify-self: center;
@@ -136,7 +149,7 @@ html {
   transition: color 1s;
   font-family: var(--font);
   font-weight: 500;
-  font-size: 0.844rem;
+  font-size: var(--fontSizeFooter);
   text-decoration: none;
   margin-bottom: 0.5rem
 }
@@ -165,25 +178,26 @@ html {
 h2 {
   font-weight: 500;
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: var(--fontSizeH2);
 }
 
 h3 {
   font-weight: 400;
   margin-top: 1.5rem;
   margin-bottom: 0.3rem;
-  font-size: 1.5rem;
+  font-size: var(--fontSizeH3);
 }
 
 p {
   font-weight: var(--paragraphFontWeight);
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: var(--fontSizeParagraph);
 }
 
 /* add an article decoration line after paragraphs */
 
 .line {
+  align-self: center;
   border-bottom: 1px solid var(--articleDecoratorLine);
   width: 80%;
   margin-top: 1.7rem;
@@ -211,11 +225,11 @@ p {
 }
 
 .authorsName {
-  font-size: 1rem;
+  font-size: var(--fontSizeName);
 }
 
 .publishingDate {
-  font-size: 0.9rem;
+  font-size: var(--fontSizeDate);
   color: var(--dateColor);
   transition: color 1s;
 }
@@ -328,13 +342,12 @@ p {
 }
 
 .dropDownMenu {
-  margin-top: 0.86rem;
-  border-top: 0.07rem solid var(--headerLineColor);
+  margin-top: 1.2rem;
   background: var(--menuColor);
   transition: background-color 1s;
   width: 26%;
   height: 100vh;
-  min-width: 15rem;
+  min-width: 15.3rem;
   display: none;
   flex-direction: column;
   position: sticky;
@@ -410,7 +423,7 @@ p {
   fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
-  margin-left: 13%;
+  margin-left: 17%;
 }
 
 #path1698 {
@@ -444,7 +457,7 @@ p {
 
 #infoButtonText {
   font-family: var(--font);
-  font-size: 1.2rem;
+  font-size: var(--fontSizeMenu);
   margin-left: 8%;
 }
 
@@ -454,7 +467,7 @@ p {
   fill: var(--menuSvg);
   fill-opacity: 0.666667;
   stroke-width: 1.18911;
-  margin-left: 13%;
+  margin-left: 17%;
 }
 
 #path9360 {
@@ -495,7 +508,7 @@ p {
 
 #allArticlesButtonText {
   font-family: var(--font);
-  font-size: 1.2rem;
+  font-size: var(--fontSizeMenu);
   margin-left: 8%;
 }
 
@@ -525,7 +538,7 @@ p {
 
 #externalLinkBtnSvg {
   fill: var(--menuSvg);
-  margin-left: 13%;
+  margin-left: 17%;
 }
 
 #rect234, #path10918, #path10888 {
@@ -534,7 +547,7 @@ p {
 
 #externalLinkButtonText {
   font-family: var(--font);
-  font-size: 1.2rem;
+  font-size: var(--fontSizeMenu);
   margin-left: 8%;
 }
 
@@ -554,7 +567,7 @@ p {
   border: 0;
   outline: none;
   color: var(--textColor);
-  font-size: 1.2rem;
+  font-size: var(--fontSizeMenu);
   border-bottom: 0.06rem solid var(--footerLineColor);
   width: 8rem;
   margin-bottom: 0.3rem;
@@ -572,7 +585,7 @@ p {
 }
 
 #searchInput {
-  margin-left: 13%;
+  margin-left: 17%;
 }
 
 #searchButton {
@@ -622,8 +635,7 @@ p {
   }
 
   #allArticlesButtonSvg {
-    margin-left: 0rem;
-    margin-right: 0.5rem;
+    margin-left: 0.5rem;
   }
 
   #allArticlesButtonText {
@@ -643,7 +655,6 @@ p {
 
   #infoButtonSvg {
     margin-left: 1rem;
-    margin-right: 0.5rem;
   }
 
   #externalLinkButton {
@@ -652,11 +663,9 @@ p {
   }
 
   #externalLinkBtnSvg {
-    margin-left: 1rem;
-    margin-right: 0.5rem;
+    margin-left: 2rem;
   }
-  
-  
+
   #externalLinkButtonText {
     margin-left: 1rem;
     margin-right: 8rem;
@@ -671,14 +680,14 @@ p {
   }
 
   #searchInput {
-    margin-left: 3.2rem;
+    margin-left: 4rem;
     justify-content: center;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
   }
 
   #searchBar {
-    margin-left: 1.7rem;
+    margin-left: 1rem;
     margin-right: 4rem;
   }
 
