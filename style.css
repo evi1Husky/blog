@@ -549,12 +549,12 @@ p {
 }
 
 #searchBar {
-  border: none;
-  outline: none;
   color: var(--textColor);
   font-size: 1.2rem;
-  border: none;
-  border-bottom: 0.06rem solid var(--footerLineColor);
+  border-bottom: 1px solid var(--footerLineColor);
+  border-top: none;
+  border-left: none;
+  border-right: none;
   width: 8rem;
   margin-bottom: 0.3rem;
   padding-left: 0.4rem;
