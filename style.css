@@ -714,9 +714,10 @@ p {
   }
 }
 
-@supports (-webkit-touch-callout: none) {
-  #searchBar {
-    border: 0;
-    border-bottom: 0;
-  }
+
+@media not all and (min-resolution:.001dpcm) { 
+    #searchBar {
+      border: 0;
+      border-bottom: 0;
+    }
 }
