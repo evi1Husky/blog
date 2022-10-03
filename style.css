@@ -332,7 +332,7 @@ p {
   transition: background-color 1s;
   width: 26%;
   height: 100vh;
-  min-width: 13rem;
+  min-width: 15rem;
   display: none;
   flex-direction: column;
   position: sticky;
@@ -430,7 +430,6 @@ p {
   height: 2rem;
   width: 100%;
   color: var(--textColor);
-  margin-top: 10%;
 }
 
 #infoButton:hover {
@@ -537,6 +536,60 @@ p {
   margin-left: 8%;
 }
 
+/* Search input form */
+
+
+#searchInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+
+#searchBar {
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  font-size: 1.2rem;
+  border-bottom: 0.06rem solid var(--footerLineColor);
+  width: 8rem;
+  margin-bottom: 0.3rem;
+  padding-left: 0.4rem;
+  margin-left: 8%;
+  background: none;
+}
+
+::placeholder {
+  color: var(--textColor);
+}
+
+#searchInputPath {
+  fill: var(--menuSvg);
+}
+
+#searchInput {
+  margin-left: 13%;
+}
+
+#searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: none;
+  border-radius: 50%;
+}
+
+#searchButton:hover {
+  background: var(--hoverColor);
+}
+
+#searchButton:active {
+  background: var(--activeColor);
+}
+
 /* media queries for small browser windows */
 
 /* Move the menu on top of the article using flex reverse property when browser 
@@ -550,7 +603,7 @@ p {
   }
 
   .dropDownMenu {
-    height: 15rem;
+    height: 18.2rem;
     width: 100%;
     flex-direction: column;
     position: relative;
@@ -578,7 +631,7 @@ p {
 
   #infoButton {
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 0.9rem;
   }
 
   #infoButtonText {
@@ -613,6 +666,18 @@ p {
     align-self: center;
     margin-bottom: 1.5rem;
     margin-top: 1.6rem;
+  }
+
+  #searchInput {
+    margin-left: 3.2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+  }
+
+  #searchBar {
+    margin-left: 1.7rem;
+    margin-right: 4rem;
   }
 
 }

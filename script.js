@@ -15,6 +15,8 @@ down menu */
   const moonLogo = document.getElementById('moonLogo');
   const sunButtonSvg = document.getElementById('sunButtonSvg');
   const moonButtonSvg = document.getElementById('moonButtonSvg');
+  const searchBar = document.getElementById('searchInput');
+  const searchForm = document.getElementById('searchBar');
   menuButton.addEventListener('click', function() {
     const style = getComputedStyle(dropDownMenu)
     const display = style.display;
@@ -30,7 +32,8 @@ down menu */
     if (e.target !== menuButton && e.target !== dropDownMenu
       && e.target !== darkModeButton && e.target !== sunLogo
       && e.target !== moonLogo && e.target !== sunButtonSvg
-      && e.target !== moonButtonSvg) {
+      && e.target !== moonButtonSvg && e.target !== searchBar
+      && e.target !== searchForm) {
       dropDownMenu.style.display = 'none';
       container.style.justifyContent = 'center';
     }
