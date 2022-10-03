@@ -49,12 +49,10 @@ body {
 
 /* Set box sizing to border box for better element sizing control */
 
-box-sizing:border-box;
--moz-box-sizing:border-box; /* Firefox */
--webkit-box-sizing:border-box; /* Safari */
-
 html {
   box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box; 
 }
 
 *, *:before, *:after {
