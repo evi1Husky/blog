@@ -49,6 +49,10 @@ body {
 
 /* Set box sizing to border box for better element sizing control */
 
+box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */
+
 html {
   box-sizing: border-box;
 }
@@ -549,13 +553,11 @@ p {
 }
 
 #searchBar {
+  border: 0;
   outline: none;
   color: var(--textColor);
   font-size: 1.2rem;
-  border-bottom: 1px solid var(--footerLineColor);
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
+  border-bottom: 0.06rem solid var(--footerLineColor);
   width: 8rem;
   margin-bottom: 0.3rem;
   padding-left: 0.4rem;
