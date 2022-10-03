@@ -553,6 +553,7 @@ p {
   outline: none;
   color: var(--textColor);
   font-size: 1.2rem;
+  border: none;
   border-bottom: 0.06rem solid var(--footerLineColor);
   width: 8rem;
   margin-bottom: 0.3rem;
