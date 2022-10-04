@@ -9,7 +9,6 @@ down menu */
 (() => {
   const menuButton = document.getElementById('svgContainerMenu');
   const dropDownMenu = document.querySelector('.dropDownMenu');
-  const container = document.querySelector('.menu-ArticleContainer');
   const darkModeButton = document.getElementById('darkModeButtonContainer');
   const sunLogo = document.getElementById('sunLogo');
   const moonLogo = document.getElementById('moonLogo');
@@ -22,10 +21,8 @@ down menu */
     const display = style.display;
     if (display === 'none') {
       dropDownMenu.style.display = 'flex';
-      container.style.justifyContent = 'flex-end';
     } else {
       dropDownMenu.style.display = 'none';
-      container.style.justifyContent = 'center';
     }
   });
   document.addEventListener('click', function(e) {
@@ -35,7 +32,6 @@ down menu */
       && e.target !== moonButtonSvg && e.target !== searchBar
       && e.target !== searchForm) {
       dropDownMenu.style.display = 'none';
-      container.style.justifyContent = 'center';
     }
   });
 })();
@@ -87,6 +83,7 @@ down menu */
 (() => {
   const target = document.querySelector('.footer');
   const backToTheTopButton = document.querySelector('.backToTheTopButton');
+  const dropDownMenu = document.querySelector('.dropDownMenu');
   function callback(entries, observer) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
