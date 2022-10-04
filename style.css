@@ -96,7 +96,7 @@ html {
   border-bottom: 0.04rem solid var(--headerLineColor);
   position: fixed;
   width: 100%;
-  height: 8%;
+  height: 3.36rem;
   background: var(--menuColor);
 }
 
@@ -337,7 +337,7 @@ p {
 }
 
 .dropDownMenu {
-  margin-top: 3.454rem;
+  margin-top: 3.36rem;
   background: var(--menuColor);
   transition: background-color 1s;
   height: 100vh;
@@ -708,6 +708,7 @@ p {
 
   .dropDownMenu {
     width: 30%;
+
   }
 }
 
@@ -715,6 +716,7 @@ p {
 
   .dropDownMenu {
     width: 35%;
+
   }
 }
 
