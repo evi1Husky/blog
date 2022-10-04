@@ -72,6 +72,8 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
 }
 
 /* Create a container that holds all web page elements and displays them
