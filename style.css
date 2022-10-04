@@ -10,14 +10,14 @@
   --menuSvg: #3f4145;
   --pfpSvg: #b161f2;
   --headerLineColor: #3f4145;
-  --menuColor: rgba(214, 216, 225, 0.8);
+  --menuColor: rgba(214, 216, 225, 0.7);
   --footerTextColor: #4c4e53;
   --footerLineColor: #4c4e53;
   --articleDecoratorLine: #7f828a;
   --hoverColor: #c8cad2;
   --activeColor: #d6d8e1;
   --dateColor: #575a5e;
-  --headerColor: rgba(214, 216, 225, 0.8)
+  --headerColor: rgba(214, 216, 225, 0.7)
 }
 
 .dark {
@@ -28,14 +28,14 @@
   --menuSvg: #9AA2B2;
   --pfpSvg: #5adea5;
   --headerLineColor: #666B74;
-  --menuColor: rgba(30, 33, 39, 0.8);
+  --menuColor: rgba(30, 33, 39, 0.7);
   --footerTextColor: #666B74;
   --footerLineColor: #666B74;
   --articleDecoratorLine: #666B74;
   --hoverColor: #666B74;
   --activeColor: #9AA2B2;
   --dateColor: #666B74;
-  --headerColor: rgba(30, 33, 39, 0.8);
+  --headerColor: rgba(30, 33, 39, 0.7);
 }
 
 /* font settings */
