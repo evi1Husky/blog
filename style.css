@@ -8,34 +8,36 @@
   --svgColor: #3f4145;
   --moonColor: #3f4145;
   --menuSvg: #3f4145;
+  --previousNextButtonsSvg: #3f4145;
   --pfpSvg: #b161f2;
-  --headerLineColor: #3f4145;
-  --menuColor: rgba(214, 216, 225, 0.7);
+  --headerLineColor: #80848c;
+  --menuColor: rgba(214, 216, 225, 0.6);
   --footerTextColor: #4c4e53;
   --footerLineColor: #4c4e53;
   --articleDecoratorLine: #7f828a;
   --hoverColor: #c8cad2;
   --activeColor: #d6d8e1;
   --dateColor: #575a5e;
-  --headerColor: rgba(214, 216, 225, 0.7)
+  --headerColor: rgba(214, 216, 225, 0.6)
 }
 
 .dark {
   --backgroundColor: #24272c;
   --textColor: #9AA2B2;
-  --svgColor: #c175ff;
+  --svgColor: #9AA2B2;
   --moonColor: #737cff;
   --menuSvg: #9AA2B2;
+  --previousNextButtonsSvg: #9AA2B2;
   --pfpSvg: #5adea5;
-  --headerLineColor: #666B74;
-  --menuColor: rgba(30, 33, 39, 0.7);
+  --headerLineColor: #43464b;
+  --menuColor: rgba(30, 33, 39, 0.6);
   --footerTextColor: #666B74;
   --footerLineColor: #666B74;
   --articleDecoratorLine: #666B74;
   --hoverColor: #666B74;
   --activeColor: #9AA2B2;
   --dateColor: #666B74;
-  --headerColor: rgba(30, 33, 39, 0.7);
+  --headerColor: rgba(30, 33, 39, 0.6);
 }
 
 /* font settings */
@@ -116,6 +118,42 @@ html {
   align-self: center;
 }
 
+/* panel with navigation buttons used to go to next/previous blog post,
+   positioned between the navigation bar and and blog post container */
+
+#navigationPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+#previousButton {
+  margin-right: 3rem;
+}
+
+#nextButton {
+  margin-left: 3rem;
+}
+
+.previousNextButtons {
+  border-radius: 50%;
+}
+
+.previousNextButtonsPath {
+  fill: var(--previousNextButtonsSvg);
+}
+
+.previousNextButtons:hover {
+  background: var(--hoverColor);
+}
+
+.previousNextButtons:active {
+  background: var(--activeColor);
+}
+
 /* Footer
 
 /* responsive footer with short line that always stays at the bottom
@@ -155,7 +193,7 @@ html {
 /* container for blog articles */
 
 .articleContainer {
-  margin-top: 8rem;
+  margin-top: 0.5rem;
   margin-bottom: 4rem;
   font-family: var(--font);
   color: var(--textColor);
