@@ -127,7 +127,7 @@ html {
   justify-content: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 }
 
 #previousButton {
@@ -140,6 +140,8 @@ html {
 
 .previousNextButtons {
   border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .previousNextButtonsPath {
@@ -193,7 +195,7 @@ html {
 /* container for blog articles */
 
 .articleContainer {
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   margin-bottom: 4rem;
   font-family: var(--font);
   color: var(--textColor);
