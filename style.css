@@ -304,7 +304,8 @@ p {
 
 /* Scroll to the top button */
 
-/* Back to the top button that appears when you reach the bottom of the page */
+/* Back to the top button that appears when you reach
+   the bottom of the page */
 
 #backToTheTopButton {
   position: fixed;
@@ -360,23 +361,15 @@ p {
   border: none;
   margin-left: 44%;
   margin-bottom: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
 }
 
-#sunButtonSvg {
-  fill: var(--svgColor);
-  stroke: var(--svgColor);
-  transition: fill 1s;
-  stroke-width:0.25;
-  pointer-events: none;
+#sunLogo {
+  font-size: 1.6rem;
 }
 
-#moonButtonSvg {
-  fill: var(--moonColor);
-  stroke: var(--moonColor);
-  transition: fill 1s;
-  stroke-width:0.264523;
-  pointer-events: none;
+#moonLogo {
+  font-size: 1.3rem;
 }
 
 .sunLogo {
@@ -452,6 +445,11 @@ p {
 #linkEmoji {
   font-size: 1.3rem;
   margin-right: 1.5rem;
+}
+
+#externalLinkButton {
+  text-decoration: none;
+  cursor: default;
 }
 
 /* Search input form */
