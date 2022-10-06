@@ -306,44 +306,32 @@ p {
 
 /* Back to the top button that appears when you reach the bottom of the page */
 
-.backToTheTopButton {
+#backToTheTopButton {
   position: fixed;
   z-index: 100;
   opacity: 0;
   bottom: 3.2rem; 
-  right: 5%; 
-  border: 0;
-  background-image: none;
-  background: transparent;
+  right: 19.7%; 
   transition: all 0.2s ease;
 }
 
-#toTheTop {
-  background-color: transparent;
-  pointer-events: none;
-  border-radius: 100%;
+#backToTheTopSvg {
   transform: rotate(-90deg);
+  border-radius: 50%;
+  transition: 0.1s;
 }
 
-#path9360 {
+#backToTheTopButtonPath {
   fill: var(--svgColor);
-  stroke: var(--svgColor);
   transition: fill 1s;
-  transition: stroke 1s;
-  fill-opacity:0.666667;
-  stroke-width:1.18911
 }
 
-#rect11912 {
-  fill: var(--svgColor);
-  stroke: var(--svgColor);
-  transition: fill 1s;
-  transition: stroke 1s;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke-width: 0.25;
-  stroke-dasharray: none;
-  stroke-opacity: 1
+#backToTheTopSvg:hover {
+  background-color: var(--hoverColor);
+}
+
+#backToTheTopSvg:active {
+  background-color: var(--activeColor);
 }
 
 /* drop down menu */
@@ -634,6 +622,10 @@ p {
     right: 5%;
   }
 
+  #backToTheTopButton {
+    right: 5%;
+  }
+
   .menu-ArticleContainer {
     display: flex;
     flex-direction: column-reverse;
@@ -722,10 +714,6 @@ p {
 
   #darkModeButtonContainer {
     margin-right: 1.5rem;
-  }
-
-  .backToTheTopButton {
-    right: 15%;
   }
 }
 

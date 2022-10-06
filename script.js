@@ -26,12 +26,14 @@ drop down menu by clicking on blog article*/
 
 // Scroll to the top button
 
-/* Use Intersection Observer API to make the scroll to the top button appear when
- reaching the bottom of the page */
+/* Use Intersection Observer API to make the scroll to the top button
+  appear when reaching the bottom of the page, Pass scrollTo method to
+  addEventListener to enable scrolling to the top of the page on button
+  click */
 
 (() => {
   const target = document.querySelector('.footer');
-  const backToTheTopButton = document.querySelector('.backToTheTopButton');
+  const backToTheTopButton = document.getElementById('backToTheTopButton');
   function callback(entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -43,14 +45,6 @@ drop down menu by clicking on blog article*/
   }
   const observer = new IntersectionObserver(callback);
   observer.observe(target);
-})();
-
-/* Pass scrollTo method to addEventListener to enable scrolling to the 
- top of the page on button click */
-
-(() => {
-  const toTheTop = document.getElementById('toTheTop');
-  const backToTheTopButton = document.getElementById('backToTheTopButton');
   const rootElement = document.documentElement;
   backToTheTopButton.addEventListener("click", function() {
     rootElement.scrollTo({
@@ -58,28 +52,6 @@ drop down menu by clicking on blog article*/
       behavior: "smooth"
     });
   });
-  if ("ontouchstart" in document.documentElement) {
-    backToTheTopButton.addEventListener('touchstart', function() {
-      toTheTop.style.background = 'var(--hoverColor)';
-    });
-    backToTheTopButton.addEventListener('touchend', function() {
-      toTheTop.style.background = 'transparent';
-    });
-  } else {
-    backToTheTopButton.addEventListener('mouseover', function() {
-      toTheTop.style.background = 'var(--hoverColor)';
-    });
-    backToTheTopButton.addEventListener('mouseout', function() {
-      toTheTop.style.background = 'transparent';
-      backToTheTopButton.style.background = 'transparent';
-    });
-    backToTheTopButton.addEventListener('mousedown', function() {
-      toTheTop.style.background = 'var(--activeColor)';
-    });
-    backToTheTopButton.addEventListener('mouseup', function() {
-      toTheTop.style.background = 'var(--hoverColor)';
-  });
-  }
 })();
 
 // Dark/light mode toggle button
@@ -101,7 +73,8 @@ if (preferredTheme === 'dark') {
   document.querySelector(":root").classList.toggle("dark");
 }
 
-document.getElementById("darkModeButtonContainer").addEventListener("click", () => {
+document.getElementById("darkModeButtonContainer"
+  ).addEventListener("click", () => {
   document.querySelector("body").style.transition = 'background-color 1s';
   document.getElementById("moonLogo").style.transition = 'all 1s ease-out';
   document.getElementById("sunLogo").style.transition = 'all 1s ease-out';
