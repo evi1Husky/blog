@@ -668,10 +668,6 @@ p {
 
   }
 
-  #externalLinkButton:focus {
-    background: var(--activeColor);
-  }
-
   #darkModeButtonContainer {
     margin-left: 0rem;
     margin-right: 2rem;
