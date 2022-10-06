@@ -142,10 +142,12 @@ html {
   border-radius: 50%;
   width: 1.25rem;
   height: 1.25rem;
+
 }
 
 .previousNextButtonsPath {
   fill: var(--previousNextButtonsSvg);
+  transition: fill 1s;
 }
 
 .previousNextButtons:hover {
@@ -274,56 +276,30 @@ p {
   transition: color 1s;
 }
 
-/* position header buttons using flex box and right properties */
+/* svg header menu button */
 
-.headerButtons {
-  position: absolute;
-  right: 5%;
-  margin-top: 0.3rem;
- }
- 
- /* Drop down menu */
-
- .headerMenu {
-  border-radius: 100%;
+#menuButton {
+ position: absolute;
+ right: 20%;
+ margin-top: 0.2rem;
 }
 
-/* svg header menu button animation */
-/* disable pointer events and use a wrapper div instead because directly clicking
-   on inline SVG elements doesn't trigger events */
-
-#headerMenu {
-  cursor: default;
-  transition: 0.09s;
-  transform: rotate(0deg);
-  user-select: none;
-  pointer-events: none;
-  border-radius: 100%;
-  background: transparent;
+#menuButtonSvg {
+  border-radius: 50%;
+  transition: 0.1s;
 }
 
-#path9360 {
+#menuButtonSvg:hover {
+  background-color: var(--hoverColor);
+}
+
+#menuButtonSvg:active {
+  background-color: var(--activeColor);
+}
+
+#menuButtonSvgPath {
   fill: var(--svgColor);
   transition: fill 1s;
-  fill-opacity: 0.666667;
-  stroke-width: 1.18911;
-}
-
-#rect11912 {
-  fill: var(--svgColor);
-  transition: fill 1s;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: var(--svgColor);
-  transition: stroke 1s;
-  stroke-width: 0.25;
-  stroke-dasharray: none;
-  stroke-opacity: 1
-}
-
-#svgContainerMenu {
-  border: 0;
-  background: transparent;
 }
 
 /* Scroll to the top button */
@@ -387,7 +363,7 @@ p {
   background: var(--menuColor);
   transition: background-color 1s;
   height: 100vh;
-  width: 17rem;
+  width: 17.5rem;
   display: none;
   flex-direction: column;
   position: fixed;
@@ -654,6 +630,10 @@ p {
  width decreases, adjust menu layout for mobile browsers */
 
 @media (max-width: 710px) {
+  #menuButton {
+    right: 5%;
+  }
+
   .menu-ArticleContainer {
     display: flex;
     flex-direction: column-reverse;
@@ -739,9 +719,6 @@ p {
 /* media queries for desktop browsers */
 
 @media (min-width: 900px) {
-  .headerButtons {
-    right: 15%;
-  }
 
   #darkModeButtonContainer {
     margin-right: 1.5rem;

@@ -13,39 +13,14 @@
   <div class="content" id="content">
     <div class="header" id="header">
       <h1 class="headerText">Header</h1>
-      <div class="headerButtons">
-        <div class="headerMenu" id="menuButton">
-          <button id="svgContainerMenu">
-          <svg
-            id="headerMenu"
-            version="1.1"
-            viewBox="0 0 8.0000004 8.0000003"
-            height="8mm"
-            width="8mm"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:svg="http://www.w3.org/2000/svg">
-            <defs
-              id="defs2"
-              />
-            <g
-              id="layer1"
-              transform="translate(-98.6906, -148.065)">
-              <g
-                id="g7903"
-                transform="translate(18.2479, -8.13829)">
-                <path
-                  d=""
-                  id="path9360"
-                  transform="matrix(0.26458333,0,0,0.26458333,-18.247881,8.1382924)" />
-                <path
-                  id="rect11912"
-                  d="m 83.972713,158.08224 -0.195332,0.19482 1.863968,1.86397 -1.865006,1.86449 0.195338,0.19533 1.864487,-1.86448 5.16e-4,5.1e-4 0.195339,-0.19481 -5.16e-4,-5.2e-4 -0.195338,-0.19534 z" />
-              </g>
-            </g>
-          </svg>
-          </button>
-        </div>
-      </div>
+      <a id="menuButton">
+        <svg id="menuButtonSvg" viewBox="-0.3 0 5 5" width="1.3rem" height="1.3rem">
+          <path id="menuButtonSvgPath" fill="currentColor"
+            d="M1.549004.8734492a.2421543.2421543
+            0 0 0 0 .351625l1.29656796 1.27462656L1.549004
+            3.77432732a.2421543.2421543 0 0 0 0 .351625.2421543.2421543
+            0 0 0 .351625 0l1.62625156-1.62625156L1.900629.8734492a.2421543.2421543
+            0 0 0-.351625 0z"/></svg></a>
     </div>
     <div id="navigationPanel">
       <a class="previousNextButtons" id="previousButton">
@@ -261,24 +236,13 @@
        <a id="externalLinkButtonText">link</a>
       </button>
     </div>
+
+    <!-- all user blog content goes here -->
     <div class="articleContainer" id="articleContainer">
       <div class="article">
         <div class="authorsInfo">
-          <svg
-            width="3rem"
-            height="3rem"
-            viewBox="0 0 4 4"
-            version="1.1"
-            id="authorsPfp">
-            <g
-              id="layer1">
-              <circle
-                id="path354"
-                cx="2"
-                cy="2"
-                r="1.8877118"/>
-            </g>
-            </svg>
+          <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
+            <circle id="path354" cx="2" cy="2" r="1.8877"/></svg>
           <div class="nameDate">
             <div class="authorsName">Author's name and pfp</div>
             <div class="publishingDate">09/17/2022</div>
@@ -387,6 +351,7 @@
         <div class="line"></div>
       </div>
     </div>
+
     <div class="footer">
       <h1 id="link">Footer</h1>
     </div>

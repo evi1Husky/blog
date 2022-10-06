@@ -1,79 +1,28 @@
 // Drop down menu 
 
-/* Assign event listener to the drop down menu button svg container, hide
-drop down menu by clicking anywhere on the page except the button and the
-the menu, to do so assign an even listener to the entire document
-and use an if statement to check if an element is menu button/drop 
-down menu */
+/* Assign event listener to the drop down menu button, hide
+drop down menu by clicking on blog article*/
 
 (() => {
-  const menuButton = document.getElementById('svgContainerMenu');
-  const dropDownMenu = document.querySelector('.dropDownMenu');
-  const darkModeButton = document.getElementById('darkModeButtonContainer');
-  const sunLogo = document.getElementById('sunLogo');
-  const moonLogo = document.getElementById('moonLogo');
-  const sunButtonSvg = document.getElementById('sunButtonSvg');
-  const moonButtonSvg = document.getElementById('moonButtonSvg');
-  const searchBar = document.getElementById('searchInput');
-  const searchForm = document.getElementById('searchBar');
+  const menuButton = document.getElementById('menuButton');
+  const menuButtonSvg = document.getElementById('menuButtonSvg');
   menuButton.addEventListener('click', function() {
     const style = getComputedStyle(dropDownMenu)
     const display = style.display;
     if (display === 'none') {
       dropDownMenu.style.display = 'flex';
+      menuButtonSvg.style.transform = 'rotate(90deg)'
     } else {
       dropDownMenu.style.display = 'none';
+      menuButtonSvg.style.transform = 'rotate(0deg)'
     }
   });
-  document.addEventListener('click', function(e) {
-    if (e.target !== menuButton && e.target !== dropDownMenu
-      && e.target !== darkModeButton && e.target !== sunLogo
-      && e.target !== moonLogo && e.target !== sunButtonSvg
-      && e.target !== moonButtonSvg && e.target !== searchBar
-      && e.target !== searchForm) {
+  const articleContainer = document.getElementById('articleContainer');
+  articleContainer.addEventListener('click', function() {
       dropDownMenu.style.display = 'none';
-    }
-  });
+      menuButtonSvg.style.transform = 'rotate(0deg)'
+    });
 })();
-
-/* rotate menu button on click and change background on mouseover,
- check if mobile browser to assign different event listeners */
-
-  (() => {
-    const menuButtonSvg = document.getElementById('headerMenu');
-    const menuButton = document.getElementById('svgContainerMenu');
-    const dropDownMenu = document.querySelector('.dropDownMenu');
-    document.addEventListener('click', function() {
-      const style = getComputedStyle(dropDownMenu)
-      const display = style.display;
-      if (display === 'none') {
-        menuButtonSvg.style.transform = 'rotate(0deg)'
-      } else {
-        menuButtonSvg.style.transform = 'rotate(90deg)'
-      }
-    });
-    if ("ontouchstart" in document.documentElement) {
-      menuButton.addEventListener('touchstart', function() {
-        menuButtonSvg.style.background = 'var(--hoverColor)';
-      });
-      menuButton.addEventListener('touchend', function() {
-        menuButtonSvg.style.background = 'transparent';
-    });
-    } else {
-      menuButton.addEventListener('mouseover', function() {
-        menuButtonSvg.style.background = 'var(--hoverColor)';
-      });
-      menuButton.addEventListener('mouseout', function() {
-        menuButtonSvg.style.background = 'transparent';
-      });
-      menuButton.addEventListener('mousedown', function() {
-        menuButtonSvg.style.background = 'var(--activeColor)';
-      });
-      menuButton.addEventListener('mouseup', function() {
-        menuButtonSvg.style.background = 'var(--hoverColor)';
-      });
-    }
-  })();
 
 // Scroll to the top button
 
@@ -83,8 +32,7 @@ down menu */
 (() => {
   const target = document.querySelector('.footer');
   const backToTheTopButton = document.querySelector('.backToTheTopButton');
-  const dropDownMenu = document.querySelector('.dropDownMenu');
-  function callback(entries, observer) {
+  function callback(entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         backToTheTopButton.style.opacity = '1'
@@ -174,16 +122,4 @@ document.getElementById("darkModeButtonContainer").addEventListener("click", () 
   } else {
     localStorage.setItem('preferredTheme', 'light');
   }
-})
-
-// All articles button
-
-document.getElementById("allArticlesButton").addEventListener("click", () => {
-  console.log('list with all articles');
-})
-
-// Info button
-
-document.getElementById("infoButton").addEventListener("click", () => {
-  console.log('some stuff about this blog');
 })
