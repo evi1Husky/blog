@@ -623,7 +623,7 @@ p {
   }
 
   .dropDownMenu {
-    height: 18.2rem;
+    height: 16.5rem;
     width: 100%;
     flex-direction: column;
     position: fixed;
@@ -666,6 +666,10 @@ p {
     justify-content: center;
     padding-right: 8rem;
 
+  }
+
+  #externalLinkButton:focus {
+    background: var(--activeColor);
   }
 
   #darkModeButtonContainer {
