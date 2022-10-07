@@ -6,9 +6,6 @@
   --backgroundColor: #e2e7f2;
   --textColor: #3f4145;
   --svgColor: #3f4145;
-  --moonColor: #3f4145;
-  --menuSvg: #3f4145;
-  --previousNextButtonsSvg: #3f4145;
   --pfpSvg: #b161f2;
   --headerLineColor: #80848c;
   --menuColor: rgba(214, 216, 225, 0.6);
@@ -25,9 +22,6 @@
   --backgroundColor: #24272c;
   --textColor: #9AA2B2;
   --svgColor: #9AA2B2;
-  --moonColor: #737cff;
-  --menuSvg: #9AA2B2;
-  --previousNextButtonsSvg: #9AA2B2;
   --pfpSvg: #5adea5;
   --headerLineColor: #43464b;
   --menuColor: rgba(30, 33, 39, 0.6);
@@ -118,46 +112,6 @@ html {
   align-self: center;
 }
 
-/* panel with navigation buttons used to go to next/previous blog post,
-   positioned between the navigation bar and and blog post container */
-
-#navigationPanel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-top: 3.5rem;
-}
-
-#previousButton {
-  margin-right: 3rem;
-}
-
-#nextButton {
-  margin-left: 3rem;
-}
-
-.previousNextButtons {
-  border-radius: 50%;
-  width: 1.25rem;
-  height: 1.25rem;
-
-}
-
-.previousNextButtonsPath {
-  fill: var(--previousNextButtonsSvg);
-  transition: fill 1s;
-}
-
-.previousNextButtons:hover {
-  background: var(--hoverColor);
-}
-
-.previousNextButtons:active {
-  background: var(--activeColor);
-}
-
 /* Footer
 
 /* responsive footer with short line that always stays at the bottom
@@ -197,7 +151,7 @@ html {
 /* container for blog articles */
 
 .articleContainer {
-  margin-top: 0rem;
+  margin-top: 5.3rem;
   margin-bottom: 4rem;
   font-family: var(--font);
   color: var(--textColor);
@@ -352,9 +306,9 @@ p {
   -webkit-backdrop-filter: blur(12px);
 } 
 
-/* Dark/light mode toggle button */
+/* Dark/light mode toggle button. */
 
-/* Use opacity and translate/transform to create button toggle effect */
+/* Use opacity and translate/transform to create button toggle effect  */
 
 #darkModeButtonContainer {
   background: none;
@@ -503,8 +457,9 @@ p {
 
 /* media queries for small browser windows */
 
-/* Move the menu on top of the article using flex reverse property when browser
- width decreases, adjust menu layout for mobile browsers */
+/* Move the menu on top of the article using flex reverse
+  property when browser width decreases, adjust menu layout
+  for mobile browsers */
 
 @media (max-width: 710px) {
   #menuButton {
@@ -513,12 +468,6 @@ p {
 
   #backToTheTopButton {
     right: 5%;
-  }
-
-  .menu-ArticleContainer {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
   }
 
   .dropDownMenu {
