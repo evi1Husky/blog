@@ -122,13 +122,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .footer::after {
   background-color: var(--footerLineColor);
   content: '';
   display: block;
-  height: 0.1px;
+  height: 0.04rem;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
