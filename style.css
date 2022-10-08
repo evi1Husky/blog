@@ -8,14 +8,14 @@
   --svgColor: #3f4145;
   --pfpSvg: #b161f2;
   --headerLineColor: #80848c;
-  --menuColor: rgba(214, 216, 225, 0.6);
   --footerTextColor: #4c4e53;
   --footerLineColor: #4c4e53;
   --articleDecoratorLine: #7f828a;
   --hoverColor: #c8cad2;
   --activeColor: #d6d8e1;
   --dateColor: #575a5e;
-  --headerColor: rgba(214, 216, 225, 0.6)
+  --headerColor: rgba(214, 216, 225, 0.5);
+  --menuColor: rgba(214, 216, 225, 0.5);
 }
 
 .dark {
@@ -23,15 +23,15 @@
   --textColor: #9AA2B2;
   --svgColor: #9AA2B2;
   --pfpSvg: #5adea5;
-  --headerLineColor: #43464b;
-  --menuColor: rgba(30, 33, 39, 0.6);
+  --headerLineColor: #51555b;
   --footerTextColor: #666B74;
   --footerLineColor: #666B74;
   --articleDecoratorLine: #666B74;
   --hoverColor: #666B74;
   --activeColor: #9AA2B2;
   --dateColor: #666B74;
-  --headerColor: rgba(30, 33, 39, 0.6);
+  --headerColor: rgba(49, 52, 60, 0.5);
+  --menuColor: rgba(49, 52, 60, 0.5);
 }
 
 /* font settings */
@@ -129,11 +129,11 @@ html {
   background-color: var(--footerLineColor);
   content: '';
   display: block;
-  height: 1px;
+  height: 0.1px;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
-  width: 95%;
+  width: 90%;
   margin-bottom: 2.765rem;
   transition: background-color 1s;
 }
@@ -190,7 +190,7 @@ p {
 
 .line {
   align-self: center;
-  border-bottom: 1px solid var(--articleDecoratorLine);
+  border-bottom: 0.1px solid var(--articleDecoratorLine);
   width: 80%;
   margin-top: 1.7rem;
 }
