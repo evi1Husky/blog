@@ -189,7 +189,7 @@ const aboutThisBlog =
   put toy mouse in food bowl run out of litter box at full speed.</p>
   <div class="line"></div>`;
 
-articleContainer.innerHTML = aboutThisBlog;
+// articleContainer.innerHTML = aboutThisBlog;
 
 
 
