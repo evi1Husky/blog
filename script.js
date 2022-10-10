@@ -1,9 +1,3 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js');
-    });
-}
-
 // Drop down menu 
 
 /* Assign event listener to the drop down menu button, hide
@@ -213,8 +207,18 @@ function textBlink() {
     dot someday it will be mine!. Immediately regret falling into bathtub
     put toy mouse in food bowl run out of litter box at full speed.</p>
     <div class="line"></div>`;
-  const article1 = 
-    `<div class="authorsInfo">
+
+  const articles = [
+    {
+      'id': '00',
+
+      'headline': 'article1',
+
+      'date': '09/17/2022',
+
+      'tag': 'cat ipsum',
+
+      'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
         <circle id="path354" cx="2" cy="2" r="1.8877"/></svg>
       <div class="nameDate">
@@ -322,7 +326,210 @@ function textBlink() {
       me fall over dead (not really but gets sypathy). Milk the cow scratch so owner bleeds. 
       Eat a plant, kill a hand.
     </p>
-    <div class="line"></div>`;
+    <div class="line"></div>`
+    },
+
+    {
+      'id': '01',
+
+      'headline': 'article2',
+
+      'date': '10/10/2022',
+
+      'tag': 'cat ipsum',
+
+      'body': `<div class="authorsInfo">
+      <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
+        <circle id="path354" cx="2" cy="2" r="1.8877"/></svg>
+      <div class="nameDate">
+        <div class="authorsName">Author's name and pfp</div>
+        <div class="publishingDate">10/10/2022</div>
+      </div>
+    </div>
+    <h2>Article headline</h2>
+    <h3>Paragraph heading</h3>
+    <p>
+      Lick human with sandpaper tongue. Drool thinking longingly about tuna brine.
+      Found somthing move i bite it tail chase imaginary bugs give me attention or 
+      face the wrath of my claws but reaches under door into adjacent room. Eat too 
+      much then proceed to regurgitate all over living room carpet while humans eat 
+      dinner attack curtains i will be pet i will be pet and then i will hiss. Spill 
+      litter box, scratch at owner, destroy all furniture, especially couch sleep over 
+      your phone and make cute snoring noises meow.
+    </p>
+    <p> 
+      Stretch rub face on everything, for when owners are asleep, cry for no apparent 
+      reason hunt anything yet meowwww. My water bowl is clean and freshly replenished, 
+      so i'll drink from the toilet annoy kitten brother with poking gnaw the corn cob 
+      allways wanting food meow meow chew foot.
+    </p>
+    <p> 
+      Jump up to edge of bath, fall in then scramble in a mad panic to get out kitty 
+      run to human with blood on mouth from frenzied attack on poor innocent mouse, 
+      don't i look cute? get away from me stupid dog eat all the power cords plop down 
+      in the middle where everybody walks. Show belly meow meow pee in shoe cat cat moo 
+      moo lick ears lick paws, yet stretch out on bed but scratch at door to be let outside, 
+      get let out then scratch at door immmediately after to be let back in 
+      mmmmeeeeeoooowwww. Meow all night if human is on laptop sit on the 
+      keyboard and i will be pet i will be pet and then i will hiss. Has closed eyes but still 
+      sees you. Shred all toilet paper and spread around the house let me in let me out let me 
+      in let me out let me in let me out who broke this door anyway yet get scared by sudden 
+      appearance of cucumber for where is my slave? I'm getting hungry for why dog in house? 
+      i'm the sole ruler of this home and its inhabitants smelly, stupid dogs, inferior furballs 
+      time for night-hunt, human freakout and steal mom's crouton while she is in the bathroom for 
+      if it fits i sits. Hiiiiiiiiii feed me now eat the rubberband for loves cheeseburgers ask to 
+      go outside and ask to come inside and ask to go outside and ask to come inside. I vomit in 
+      the bed in the middle of the night furball roll roll roll leave buried treasure in the sandbox 
+      for the toddlers sugar, my siamese, stalks me (in a good way), day and night . 
+      Cccccccccaaaaaaaaatttts.
+    </p>
+    <div class="line"></div>
+    <svg class="image" viewBox="0 0 300 400" width="300" height="400" 
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+      version="1.1"><rect x="0" y="0" width="300" height="400" fill="#140021">
+      </rect><path d="M0 251L15 251L15 124L30 124L30 260L45 260L45 266L60 266L60 
+      254L75 254L75 147L90 147L90 192L105 192L105 182L120 182L120 197L135 197L135 
+      224L150 224L150 236L165 236L165 189L180 189L180 240L195 240L195 262L210 
+      262L210 244L225 244L225 127L240 127L240 173L255 173L255 168L270 168L270 
+      207L285 207L285 216L300 216L300 160L300 401L300 401L285 401L285 401L270 
+      401L270 401L255 401L255 401L240 401L240 401L225 401L225 401L210 401L210 
+      401L195 401L195 401L180 401L180 401L165 401L165 401L150 401L150 401L135 
+      401L135 401L120 401L120 401L105 401L105 401L90 401L90 401L75 401L75 
+      401L60 401L60 401L45 401L45 401L30 401L30 401L15 401L15 401L0 401Z" 
+      fill="#560090"></path><path d="M0 196L15 196L15 216L30 216L30 172L45 
+      172L45 281L60 281L60 256L75 256L75 266L90 266L90 199L105 199L105 226L120 
+      226L120 289L135 289L135 156L150 156L150 288L165 288L165 245L180 245L180 
+      201L195 201L195 150L210 150L210 189L225 189L225 201L240 201L240 157L255 
+      157L255 204L270 204L270 238L285 238L285 221L300 221L300 207L300 401L300 
+      401L285 401L285 401L270 401L270 401L255 401L255 401L240 401L240 401L225 
+      401L225 401L210 401L210 401L195 401L195 401L180 401L180 401L165 401L165 
+      401L150 401L150 401L135 401L135 401L120 401L120 401L105 401L105 401L90 
+      401L90 401L75 401L75 401L60 401L60 401L45 401L45 401L30 401L30 401L15 
+      401L15 401L0 401Z" fill="#5c009a"></path><path d="M0 186L15 186L15 208L30 
+      208L30 280L45 280L45 189L60 189L60 184L75 184L75 269L90 269L90 166L105 
+      166L105 289L120 289L120 217L135 217L135 215L150 215L150 163L165 163L165 
+      235L180 235L180 180L195 180L195 173L210 173L210 300L225 300L225 203L240 
+      203L240 268L255 268L255 189L270 189L270 283L285 283L285 251L300 251L300 
+      278L300 401L300 401L285 401L285 401L270 401L270 401L255 401L255 401L240 
+      401L240 401L225 401L225 401L210 401L210 401L195 401L195 401L180 401L180 
+      401L165 401L165 401L150 401L150 401L135 401L135 401L120 401L120 401L105 
+      401L105 401L90 401L90 401L75 401L75 401L60 401L60 401L45 401L45 401L30 
+      401L30 401L15 401L15 401L0 401Z" fill="#6200a3"></path><path d="M0 280L15 
+      280L15 238L30 238L30 295L45 295L45 236L60 236L60 203L75 203L75 206L90 206L90 
+      289L105 289L105 283L120 283L120 267L135 267L135 290L150 290L150 279L165 
+      279L165 254L180 254L180 305L195 305L195 293L210 293L210 266L225 266L225 
+      240L240 240L240 302L255 302L255 283L270 283L270 226L285 226L285 207L300 
+      207L300 235L300 401L300 401L285 401L285 401L270 401L270 401L255 401L255 
+      401L240 401L240 401L225 401L225 401L210 401L210 401L195 401L195 401L180 
+      401L180 401L165 401L165 401L150 401L150 401L135 401L135 401L120 401L120 
+      401L105 401L105 401L90 401L90 401L75 401L75 401L60 401L60 401L45 401L45 
+      401L30 401L30 401L15 401L15 401L0 401Z" fill="#6800ad"></path><path d="M0 
+      272L15 272L15 216L30 216L30 305L45 305L45 262L60 262L60 295L75 295L75 
+      283L90 283L90 285L105 285L105 285L120 285L120 260L135 260L135 241L150 
+      241L150 290L165 290L165 294L180 294L180 315L195 315L195 265L210 265L210 
+      276L225 276L225 261L240 261L240 304L255 304L255 312L270 312L270 275L285 
+      275L285 227L300 227L300 259L300 401L300 401L285 401L285 401L270 401L270 
+      401L255 401L255 401L240 401L240 401L225 401L225 401L210 401L210 401L195 
+      401L195 401L180 401L180 401L165 401L165 401L150 401L150 401L135 401L135 
+      401L120 401L120 401L105 401L105 401L90 401L90 401L75 401L75 401L60 401L60 
+      401L45 401L45 401L30 401L30 401L15 401L15 401L0 401Z" fill="#6e00b7">
+      </path><path d="M0 302L15 302L15 324L30 324L30 305L45 305L45 294L60 294L60 
+      229L75 229L75 318L90 318L90 234L105 234L105 332L120 332L120 273L135 273L135 
+      291L150 291L150 239L165 239L165 260L180 260L180 323L195 323L195 322L210 322L210 
+      301L225 301L225 297L240 297L240 266L255 266L255 259L270 259L270 287L285 
+      287L285 246L300 246L300 295L300 401L300 401L285 401L285 401L270 401L270 
+      401L255 401L255 401L240 401L240 401L225 401L225 401L210 401L210 401L195 
+      401L195 401L180 401L180 401L165 401L165 401L150 401L150 401L135 401L135 
+      401L120 401L120 401L105 401L105 401L90 401L90 401L75 401L75 401L60 401L60 
+      401L45 401L45 401L30 401L30 401L15 401L15 401L0 401Z" fill="#7400c1">
+      </path><path d="M0 270L15 270L15 261L30 261L30 258L45 258L45 267L60 267L60 
+      266L75 266L75 300L90 300L90 315L105 315L105 329L120 329L120 289L135 289L135 
+      262L150 262L150 289L165 289L165 256L180 256L180 341L195 341L195 331L210 
+      331L210 317L225 317L225 287L240 287L240 289L255 289L255 314L270 314L270 
+      270L285 270L285 296L300 296L300 291L300 401L300 401L285 401L285 401L270 
+      401L270 401L255 401L255 401L240 401L240 401L225 401L225 401L210 401L210 
+      401L195 401L195 401L180 401L180 401L165 401L165 401L150 401L150 401L135 
+      401L135 401L120 401L120 401L105 401L105 401L90 401L90 401L75 401L75 401L60 
+      401L60 401L45 401L45 401L30 401L30 401L15 401L15 401L0 401Z" fill="#7a00cb">
+      </path><path d="M0 344L15 344L15 338L30 338L30 335L45 335L45 334L60 334L60 
+      310L75 310L75 331L90 331L90 356L105 356L105 332L120 332L120 297L135 297L135 
+      302L150 302L150 305L165 305L165 287L180 287L180 288L195 288L195 332L210 332L210 
+      338L225 338L225 344L240 344L240 297L255 297L255 322L270 322L270 304L285 304L285 
+      287L300 287L300 335L300 401L300 401L285 401L285 401L270 401L270 401L255 401L255 
+      401L240 401L240 401L225 401L225 401L210 401L210 401L195 401L195 401L180 401L180 
+      401L165 401L165 401L150 401L150 401L135 401L135 401L120 401L120 401L105 401L105 
+      401L90 401L90 401L75 401L75 401L60 401L60 401L45 401L45 401L30 401L30 401L15 
+      401L15 401L0 401Z" fill="#8000d5"></path><path d="M0 324L15 324L15 296L30 
+      296L30 353L45 353L45 301L60 301L60 337L75 337L75 297L90 297L90 303L105 303L105 
+      357L120 357L120 295L135 295L135 356L150 356L150 350L165 350L165 314L180 314L180 
+      349L195 349L195 354L210 354L210 310L225 310L225 359L240 359L240 343L255 343L255 
+      300L270 300L270 305L285 305L285 344L300 344L300 302L300 401L300 401L285 401L285 
+      401L270 401L270 401L255 401L255 401L240 401L240 401L225 401L225 401L210 401L210 
+      401L195 401L195 401L180 401L180 401L165 401L165 401L150 401L150 401L135 401L135 
+      401L120 401L120 401L105 401L105 401L90 401L90 401L75 401L75 401L60 401L60 401L45 
+      401L45 401L30 401L30 401L15 401L15 401L0 401Z" fill="#8600e0"></path><path d="M0 
+      324L15 324L15 326L30 326L30 373L45 373L45 330L60 330L60 351L75 351L75 322L90 
+      322L90 350L105 350L105 366L120 366L120 330L135 330L135 314L150 314L150 323L165 
+      323L165 361L180 361L180 346L195 346L195 328L210 328L210 347L225 347L225 374L240 
+      374L240 376L255 376L255 333L270 333L270 354L285 354L285 352L300 352L300 357L300 
+      401L300 401L285 401L285 401L270 401L270 401L255 401L255 401L240 401L240 401L225 
+      401L225 401L210 401L210 401L195 401L195 401L180 401L180 401L165 401L165 401L150 
+      401L150 401L135 401L135 401L120 401L120 401L105 401L105 401L90 401L90 401L75 
+      401L75 401L60 401L60 401L45 401L45 401L30 401L30 401L15 401L15 401L0 401Z" 
+      fill="#8d00ea"></path><path d="M0 373L15 373L15 366L30 366L30 350L45 350L45 347L60 
+      347L60 382L75 382L75 345L90 345L90 375L105 375L105 375L120 375L120 337L135 337L135 
+      47L150 347L150 350L165 350L165 362L180 362L180 340L195 340L195 355L210 355L210 
+      344L225 344L225 386L240 386L240 356L255 356L255 337L270 337L270 371L285 371L285 
+      381L300 381L300 378L300 401L300 401L285 401L285 401L270 401L270 401L255 401L255 
+      401L240 401L240 401L225 401L225 401L210 401L210 401L195 401L195 401L180 401L180 
+      401L165 401L165 401L150 401L150 401L135 401L135 401L120 401L120 401L105 401L105 
+      401L90 401L90 401L75 401L75 401L60 401L60 401L45 401L45 401L30 401L30 401L15 
+      401L15 401L0 401Z" fill="#9300f4"></path><path d="M0 377L15 377L15 360L30 360L30 
+      377L45 377L45 378L60 378L60 376L75 376L75 379L90 379L90 361L105 361L105 364L120 
+      364L120 366L135 366L135 359L150 359L150 395L165 395L165 369L180 369L180 371L195 
+      371L195 393L210 393L210 376L225 376L225 380L240 380L240 367L255 367L255 387L270 
+      387L270 383L285 383L285 396L300 396L300 395L300 401L300 401L285 401L285 401L270 
+      401L270 401L255 401L255 401L240 401L240 401L225 401L225 401L210 401L210 401L195 
+      401L195 401L180 401L180 401L165 401L165 401L150 401L150 401L135 401L135 401L120 
+      401L120 401L105 401L105 401L90 401L90 401L75 401L75 401L60 401L60 401L45 401L45 
+      401L30 401L30 401L15 401L15 401L0 401Z" fill="#9900ff"></path></svg>
+    <h3>Paragraph heading</h3>
+    <p>
+      Intently sniff hand rub whiskers on bare skin act innocent. Meow meow we are 3 small kittens 
+      sleeping most of our time, we are around 15 weeks old i think, i donâ€™t know i canâ€™t count. 
+      Woops poop hanging from butt must get rid run run around house drag poop on floor maybe it comes 
+      off woops left brown marks on floor human slave clean lick butt now mice but meow for cat mojo yet 
+      sleep. Stare at wall turn and meow stare at wall some more meow again continue staring mice yet i 
+      like cats because they are fat and fluffy annoy owner until he gives you food say meow repeatedly 
+      until belly rubs, feels good yet lick arm hair yet i will ruin the couch with my claws. Fish i must 
+      find my red catnip fishy fish litter kitter kitty litty little kitten big roar roar feed me. Cough 
+      furball intently sniff hand. Then cats take over the world i cry and cry and cry unless you pet me, 
+      and then maybe i cry just for fun touch my tail, i shred your hand purrrr tweeting a
+    </p>
+    <p>
+      If it fits, i sits catch small lizards, bring them 
+      into house, then unable to find them on carpet or get video posted to internet 
+      for chasing red dot. Destroy dog burrow under covers scratch the postman wake 
+      up lick paw wake up owner meow meow and destroy house in 5 seconds. See owner, 
+      run in terror roll over and sun my belly attempt to leap between furniture but 
+      woefully miscalibrate and bellyflop onto the floor; what's your problem? i meant 
+      to do that now i shall wash myself intently, but chase little red dot someday it 
+      will be mine! but sit by the fire stare out cat door then go back inside for 
+      morning beauty routine of licking self. 
+    </p>
+    <p> 
+      Intrigued by the shower pet my belly, 
+      you know you want to; seize the hand and shred it! jump launch to pounce upon 
+      little yarn mouse, bare fangs at toy run hide in litter box until treats are fed 
+      but scamper i is playing on your console hooman. I am the best spend all night 
+      ensuring people don't sleep sleep all day yet curl into a furry donut so leave 
+      buried treasure in the sandbox for the toddlers or sit on human they not getting 
+      up ever ask for petting groom yourself 4 hours - checked, have your beauty sleep 
+      18 hours - checked, be fabulous for the rest of the day - checked.
+    </p>
+    <div class="line"></div>`
+    },
+  ]
 
   const aboutThisBlogButton = document.getElementById('infoButton');
   const latestArticleButton = document.getElementById('latestArticleButton');
@@ -337,7 +544,7 @@ function textBlink() {
   backToTheTop(aboutThisBlogButton);
 
   latestArticleButton.addEventListener('click', function () {
-      articleContainer.innerHTML = article1;
+      articleContainer.innerHTML = articles[articles.length - 1].body;
       dropDownMenu.style.display = 'none';
       menuButtonSvg.style.transform = 'rotate(0deg)';
       textBlink()
@@ -345,5 +552,5 @@ function textBlink() {
 
   backToTheTop(latestArticleButton);
 
-  articleContainer.innerHTML = article1;
+  articleContainer.innerHTML = aboutThisBlog;
 })();
