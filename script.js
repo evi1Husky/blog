@@ -3,24 +3,26 @@
 /* Assign event listener to the drop down menu button, hide
 drop down menu by clicking on blog article*/
 
-const menuButton = document.getElementById('menuButton');
-const menuButtonSvg = document.getElementById('menuButtonSvg');
-menuButton.addEventListener('click', function() {
-  const style = getComputedStyle(dropDownMenu)
-  const display = style.display;
-  if (display === 'none') {
-    dropDownMenu.style.display = 'flex';
-    menuButtonSvg.style.transform = 'rotate(90deg)'
-  } else {
-    dropDownMenu.style.display = 'none';
-    menuButtonSvg.style.transform = 'rotate(0deg)'
-  }
-});
-const articleContainer = document.getElementById('articleContainer');
-articleContainer.addEventListener('click', function() {
-    dropDownMenu.style.display = 'none';
-    menuButtonSvg.style.transform = 'rotate(0deg)'
-});
+(() => {
+  const menuButton = document.getElementById('menuButton');
+  const menuButtonSvg = document.getElementById('menuButtonSvg');
+  menuButton.addEventListener('click', function() {
+    const style = getComputedStyle(dropDownMenu)
+    const display = style.display;
+    if (display === 'none') {
+      dropDownMenu.style.display = 'flex';
+      menuButtonSvg.style.transform = 'rotate(90deg)'
+    } else {
+      dropDownMenu.style.display = 'none';
+      menuButtonSvg.style.transform = 'rotate(0deg)'
+    }
+  });
+  const articleContainer = document.getElementById('articleContainer');
+  articleContainer.addEventListener('click', function() {
+      dropDownMenu.style.display = 'none';
+      menuButtonSvg.style.transform = 'rotate(0deg)'
+  });
+})();
 
 // Scroll to the top button
 
@@ -29,26 +31,32 @@ articleContainer.addEventListener('click', function() {
   addEventListener to enable scrolling to the top of the page on button
   click */
 
-const target = document.querySelector('.footer');
-const backToTheTopButton = document.getElementById('backToTheTopButton');
-function callback(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      backToTheTopButton.style.opacity = '1'
-    } else {
-      backToTheTopButton.style.opacity = '0'
-    }
+function backToTheTop(button) {
+  const rootElement = document.documentElement;
+  button.addEventListener("click", function() {
+    rootElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 }
-const observer = new IntersectionObserver(callback);
-observer.observe(target);
-const rootElement = document.documentElement;
-backToTheTopButton.addEventListener("click", function() {
-  rootElement.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
+
+(() => {
+  const target = document.querySelector('.footer');
+  const backToTheTopButton = document.getElementById('backToTheTopButton');
+  function callback(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        backToTheTopButton.style.opacity = '1'
+      } else {
+        backToTheTopButton.style.opacity = '0'
+      }
+    });
+  }
+  const observer = new IntersectionObserver(callback);
+  observer.observe(target);
+  backToTheTop(backToTheTopButton);
+})();
 
 // Dark/light mode toggle button
 
@@ -93,6 +101,19 @@ document.getElementById("darkModeButtonContainer"
   }
 });
 
+/* make the inserted text pages blink by delaying disabling the animation 
+property of the display div with setTimeout() method */
+
+function textBlink() {
+  articleContainer.style.animation = 'blinkingText 0.1s infinite';
+  setTimeout(function () {
+    articleContainer.style.animation = 'none';
+  }, 100);
+}
+
+// blog cms
+
+/* */
 
 const aboutThisBlog =
   `<svg id="AboutThisBlogimage" viewBox="0 0 250 150" 
@@ -296,19 +317,24 @@ const article1 =
   <div class="line"></div>`;
 
 const aboutThisBlogButton = document.getElementById('infoButton');
-
 const latestArticleButton = document.getElementById('latestArticleButton');
 
 aboutThisBlogButton.addEventListener('click', function () {
     articleContainer.innerHTML = aboutThisBlog;
     dropDownMenu.style.display = 'none';
-    menuButtonSvg.style.transform = 'rotate(0deg)'
-  });
+    menuButtonSvg.style.transform = 'rotate(0deg)';
+    textBlink()
+});
+
+backToTheTop(aboutThisBlogButton);
 
 latestArticleButton.addEventListener('click', function () {
     articleContainer.innerHTML = article1;
     dropDownMenu.style.display = 'none';
-    menuButtonSvg.style.transform = 'rotate(0deg)'
-  });
+    menuButtonSvg.style.transform = 'rotate(0deg)';
+    textBlink()
+});
+
+backToTheTop(latestArticleButton);
 
 articleContainer.innerHTML = article1;
