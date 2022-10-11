@@ -210,10 +210,8 @@ p {
   margin-top: 1.7rem;
 }
 
-#AboutThisBlogimage {
- align-self: center;
-    max-width: 400px;
-    max-height: 300px;
+#aboutThisBlogImage {
+  margin: 0;
 }
 
 .image {
