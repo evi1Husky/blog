@@ -280,6 +280,43 @@ p {
   transition: fill 1s;
 }
 
+/* navigation buttons */
+
+#navigationPanel {
+  margin-top: 0.25rem;
+  position: absolute;
+  right: 23%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#previousButton {
+  margin-right: 0.5rem;
+}
+
+#nextButton {
+  margin-left: 0.5rem;
+}
+
+.previousNextButtons {
+  border-radius: 50%;
+}
+
+.previousNextButtonsPath {
+  fill:rgb(72, 72, 80);
+}
+
+.previousNextButtons:hover {
+  background-color: var(--hoverColor);
+}
+
+.previousNextButtons:active {
+  background-color: var(--activeColor);
+}
+
 /* Scroll to the top button */
 
 /* Back to the top button that appears when you reach
@@ -482,6 +519,18 @@ p {
   #menuButton {
     right: 5%;
   }
+
+  #navigationPanel {
+    right: 10%;
+  }
+
+#previousButton {
+  margin-right: 0.15rem;
+}
+
+#nextButton {
+  margin-left: 0.15rem;
+}
 
   #backToTheTopButton {
     right: 5%;
