@@ -285,7 +285,7 @@ p {
 #navigationPanel {
   margin-top: 0.25rem;
   position: absolute;
-  right: 23%;
+  right: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -306,7 +306,8 @@ p {
 }
 
 .previousNextButtonsPath {
-  fill:rgb(72, 72, 80);
+  fill: var(--svgColor);
+  transition: fill 1s;
 }
 
 .previousNextButtons:hover {
@@ -438,6 +439,7 @@ p {
   font-family: var(--font);
   font-size: var(--fontSizeMenu);
   padding-left: 3.7rem;
+  transition: color 1s;
 }
 
 .menuButton:hover {
@@ -487,6 +489,7 @@ p {
 
 ::placeholder {
   color: var(--textColor);
+  transition: color 1s;
 }
 
 #searchButton {
@@ -516,20 +519,28 @@ p {
   for mobile browsers */
 
 @media (max-width: 710px) {
+    .header {
+    justify-content: flex-start;
+  }
+
+  .headerText {
+    margin-left: 1.2rem;
+  }
+
   #menuButton {
     right: 5%;
   }
 
   #navigationPanel {
-    right: 10%;
+    right: 15%;
   }
 
 #previousButton {
-  margin-right: 0.15rem;
+  margin-right: 0.7rem;
 }
 
 #nextButton {
-  margin-left: 0.15rem;
+  margin-left: 0.7rem;
 }
 
   #backToTheTopButton {
