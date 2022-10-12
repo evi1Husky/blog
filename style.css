@@ -293,10 +293,31 @@ p {
 
 #previousButton {
   margin-right: 0.5rem;
+  display: inline-block;
 }
 
 #nextButton {
   margin-left: 0.5rem;
+  display: inline-block;
+}
+
+#previousButtonCircle {
+  margin-right: 0.7rem;
+  margin-bottom: 0.2rem;
+  transform: scale(1.4);
+  display: none;
+}
+
+#nextButtonCircle {
+  margin-left: 0.7rem;
+  margin-bottom: 0.2rem;
+  transform: scale(1.4);
+  display: none;
+}
+
+#previousButtonCirclePath, #nextButtonCirclePath {
+  fill: var(--svgColor);
+  transition: fill 1s;
 }
 
 .previousNextButtons {
@@ -604,6 +625,14 @@ p {
 @media (min-width: 900px) {
   #darkModeButtonContainer {
     margin-right: 1.5rem;
+  }
+
+    #previousButtonCircle {
+    margin-right: 0.5rem;
+  }
+
+  #nextButtonCircle {
+    margin-left: 0.5rem;
   }
 }
 

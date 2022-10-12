@@ -115,7 +115,8 @@ function textBlink() {
 
 // blog cms
 
-/* */
+/* use array of object to store blog content, implement client side router 
+   using history API */
 
 (() => {
   const aboutThisBlog =
@@ -139,16 +140,15 @@ function textBlink() {
     dot someday it will be mine!. Immediately regret falling into bathtub
     put toy mouse in food bowl run out of litter box at full speed.</p>
     <div class="line"></div>`;
-
   const articles = [
     {
-      'id': '00',
+      'index': 0,
 
       'headline': 'article1',
 
       'date': '09/17/2022',
 
-      'tag': 'cat ipsum',
+      'tag': '#catIpsum',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -262,13 +262,13 @@ function textBlink() {
     },
 
     {
-      'id': '01',
+      'index': 1,
 
       'headline': 'article2',
 
       'date': '10/10/2022',
 
-      'tag': 'cat ipsum',
+      'tag': '#catIpsum',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -463,13 +463,13 @@ function textBlink() {
     },
 
     {
-      'id': '02',
+      'index': 2,
 
       'headline': 'article3',
 
       'date': '10/11/2022',
 
-      'tag': 'cat ipsum',
+      'tag': '#catIpsum',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -616,24 +616,70 @@ function textBlink() {
 
   const aboutThisBlogButton = document.getElementById('infoButton');
   const latestArticleButton = document.getElementById('latestArticleButton');
+  const navigationPanel = document.getElementById('navigationPanel');
+  const previousArticle = document.getElementById('previousArticle');
+  const nextArticle = document.getElementById('nextArticle');
+  const previousButton = document.getElementById('previousButton');
+  const nextButtonleCircle = document.getElementById('nextArticleCircle');
+  const previousButtonCircle = document.getElementById('previousButtonCircle');
+
+  backToTheTop(aboutThisBlogButton);
+  backToTheTop(latestArticleButton);
+  backToTheTop(previousArticle);
+  backToTheTop(nextArticle);
+
+  /* use a variable to store the array index of currently displayed article,
+     use this variable to implement previous/next article buttons */
+
+  let currentArticleIndex = null;
 
   aboutThisBlogButton.addEventListener('click', function () {
       articleContainer.innerHTML = aboutThisBlog;
       dropDownMenu.style.display = 'none';
       menuButtonSvg.style.transform = 'rotate(0deg)';
-      textBlink()
+      navigationPanel.style.display = 'none';
+      textBlink();
   });
-
-  backToTheTop(aboutThisBlogButton);
 
   latestArticleButton.addEventListener('click', function () {
       articleContainer.innerHTML = articles[articles.length - 1].body;
+      currentArticleIndex = articles[articles.length - 1].index;
       dropDownMenu.style.display = 'none';
       menuButtonSvg.style.transform = 'rotate(0deg)';
-      textBlink()
+      navigationPanel.style.display = 'flex';
+      nextButton.style.display = 'none';
+      nextButtonCircle.style.display = 'inline-block';
+      previousButtonCircle.style.display = 'none';
+      textBlink();
   });
 
-  backToTheTop(latestArticleButton);
+  /* increment/decrement currentArticleIndex variable to display next/previous
+     articles using arrow buttons */
+
+  previousArticle.addEventListener('click', function () {
+    currentArticleIndex -= 1;
+    articleContainer.innerHTML = articles[currentArticleIndex].body;
+    nextButton.style.display = 'inline-block';
+    nextButtonCircle.style.display = 'none';
+    if (currentArticleIndex == 0) {
+      previousButton.style.display = 'none';
+      previousButtonCircle.style.display = 'inline-block';
+    }
+    textBlink();
+  });
+
+  nextArticle.addEventListener('click', function () {
+    currentArticleIndex += 1;
+    articleContainer.innerHTML = articles[currentArticleIndex].body;
+    previousButton.style.display = 'inline-block';
+    previousButtonCircle.style.display = 'none';
+    if (currentArticleIndex == articles.length - 1) {
+      nextButton.style.display = 'none';
+      nextButtonCircle.style.display = 'inline-block';
+    }
+    textBlink();
+  });
 
   articleContainer.innerHTML = aboutThisBlog;
+  navigationPanel.style.display = 'none';
 })();
