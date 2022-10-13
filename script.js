@@ -706,10 +706,10 @@ function textBlink() {
   backToTheTop(previousArticle);
   backToTheTop(nextArticle);
 
-  function goToPage(event) {
+  function changeHash(event) {
     event.preventDefault();
     const url = event.target.getAttribute('href');
-    window.history.pushState({}, window.title, url)
+    location.hash = url;
   }
 
   /* use a variable to store the array index of currently displayed article,
@@ -718,26 +718,32 @@ function textBlink() {
   let currentArticleIndex = null;
 
   aboutThisBlogButton.addEventListener('click', function (event) {
-      articleContainer.innerHTML = aboutThisBlog;
-      dropDownMenu.style.display = 'none';
-      menuButtonSvg.style.transform = 'rotate(0deg)';
-      navigationPanel.style.display = 'none';
-      textBlink();
-      goToPage(event)
+      changeHash(event)
   });
 
+  function aboutThisBlogPage() {
+    articleContainer.innerHTML = aboutThisBlog;
+    dropDownMenu.style.display = 'none';
+    menuButtonSvg.style.transform = 'rotate(0deg)';
+    navigationPanel.style.display = 'none';
+    textBlink();
+  }
+
+  function latestArticle() {
+    articleContainer.innerHTML = articles[articles.length - 1].body;
+    currentArticleIndex = articles[articles.length - 1].index;
+    dropDownMenu.style.display = 'none';
+    menuButtonSvg.style.transform = 'rotate(0deg)';
+    navigationPanel.style.display = 'flex';
+    nextButton.style.display = 'none';
+    previousButton.style.display = 'inline-block';
+    nextButtonCircle.style.display = 'inline-block';
+    previousButtonCircle.style.display = 'none';
+    textBlink();
+  }
+
   latestArticleButton.addEventListener('click', function () {
-      articleContainer.innerHTML = articles[articles.length - 1].body;
-      currentArticleIndex = articles[articles.length - 1].index;
-      dropDownMenu.style.display = 'none';
-      menuButtonSvg.style.transform = 'rotate(0deg)';
-      navigationPanel.style.display = 'flex';
-      nextButton.style.display = 'none';
-      previousButton.style.display = 'inline-block';
-      nextButtonCircle.style.display = 'inline-block';
-      previousButtonCircle.style.display = 'none';
-      textBlink();
-      goToPage(event)
+      changeHash(event)
   });
 
   /* increment/decrement currentArticleIndex variable to display next/previous
@@ -769,4 +775,16 @@ function textBlink() {
 
   articleContainer.innerHTML = aboutThisBlog;
   navigationPanel.style.display = 'none';
+
+  // location.hash = '#about';
+
+  function pageHashChnged() {
+    if (location.hash === '#about') {
+      aboutThisBlogPage();
+    } else if (location.hash === '#latest') {
+      latestArticle();
+    }
+  }
+
+  window.addEventListener('hashchange', pageHashChnged);
 })();
