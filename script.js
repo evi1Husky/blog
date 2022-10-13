@@ -706,17 +706,24 @@ function textBlink() {
   backToTheTop(previousArticle);
   backToTheTop(nextArticle);
 
+  function goToPage(event) {
+    event.preventDefault();
+    const url = event.target.getAttribute('href');
+    window.history.pushState({}, window.title, url)
+  }
+
   /* use a variable to store the array index of currently displayed article,
      use this variable to implement previous/next article buttons */
 
   let currentArticleIndex = null;
 
-  aboutThisBlogButton.addEventListener('click', function () {
+  aboutThisBlogButton.addEventListener('click', function (event) {
       articleContainer.innerHTML = aboutThisBlog;
       dropDownMenu.style.display = 'none';
       menuButtonSvg.style.transform = 'rotate(0deg)';
       navigationPanel.style.display = 'none';
       textBlink();
+      goToPage(event)
   });
 
   latestArticleButton.addEventListener('click', function () {
@@ -730,6 +737,7 @@ function textBlink() {
       nextButtonCircle.style.display = 'inline-block';
       previousButtonCircle.style.display = 'none';
       textBlink();
+      goToPage(event)
   });
 
   /* increment/decrement currentArticleIndex variable to display next/previous

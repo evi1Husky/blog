@@ -71,6 +71,10 @@ html {
   -webkit-box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Create a container that holds all web page elements and displays them
    vertically using flex column direction */
 
@@ -132,7 +136,7 @@ html {
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
-  width: 90%;
+  width: 87%;
   margin-bottom: 2.765rem;
   transition: background-color 1s;
 }
@@ -542,7 +546,7 @@ p {
   for mobile browsers */
 
 @media (max-width: 710px) {
-    .header {
+  .header {
     justify-content: flex-start;
   }
 
@@ -558,13 +562,13 @@ p {
     right: 16%;
   }
 
-#previousButton {
-  margin-right: 0.7rem;
-}
+  #previousButton {
+    margin-right: 0.7rem;
+  }
 
-#nextButton {
-  margin-left: 0.7rem;
-}
+  #nextButton {
+    margin-left: 0.7rem;
+  }
 
   #backToTheTopButton {
     right: 5%;
@@ -596,7 +600,6 @@ p {
     justify-content: center;
     padding-right: 3.5rem;
   }
-
 
   #externalLinkButton {
     justify-content: center;
