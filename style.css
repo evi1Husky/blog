@@ -213,13 +213,16 @@ p {
 #aboutThisBlogImage {
   margin: 0;
   align-self: center;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .image {
   align-self: center;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 800px;
+  max-height: 800px;
   margin-top:  2rem;
+ /* transform: scale(1.5);*/
 }
 
 /* html element with author's info: pfp, name and article   
