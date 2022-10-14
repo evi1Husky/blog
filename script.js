@@ -116,7 +116,7 @@ function textBlink() {
 // blog cms
 
 /* use array of object to store blog content, implement client side router 
-   using history API */
+   using hashes */
 
 (() => {
   const aboutThisBlog =
@@ -149,6 +149,8 @@ function textBlink() {
       'date': '09/17/2022',
 
       'tag': '#catIpsum',
+
+      'hash': '#' + this.headline,
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -707,7 +709,6 @@ function textBlink() {
   backToTheTop(nextArticle);
 
   function changeHash(event) {
-    event.preventDefault();
     const url = event.target.getAttribute('href');
     location.hash = url;
   }
@@ -718,20 +719,14 @@ function textBlink() {
   let currentArticleIndex = null;
 
   aboutThisBlogButton.addEventListener('click', function (event) {
-      changeHash(event)
-  });
-
-  function aboutThisBlogPage() {
-    articleContainer.innerHTML = aboutThisBlog;
     dropDownMenu.style.display = 'none';
     menuButtonSvg.style.transform = 'rotate(0deg)';
     navigationPanel.style.display = 'none';
+    changeHash(event);
     textBlink();
-  }
+  });
 
-  function latestArticle() {
-    articleContainer.innerHTML = articles[articles.length - 1].body;
-    currentArticleIndex = articles[articles.length - 1].index;
+  latestArticleButton.addEventListener('click', function (event) {
     dropDownMenu.style.display = 'none';
     menuButtonSvg.style.transform = 'rotate(0deg)';
     navigationPanel.style.display = 'flex';
@@ -739,11 +734,8 @@ function textBlink() {
     previousButton.style.display = 'inline-block';
     nextButtonCircle.style.display = 'inline-block';
     previousButtonCircle.style.display = 'none';
+    changeHash(event);
     textBlink();
-  }
-
-  latestArticleButton.addEventListener('click', function () {
-      changeHash(event)
   });
 
   /* increment/decrement currentArticleIndex variable to display next/previous
@@ -773,18 +765,29 @@ function textBlink() {
     textBlink();
   });
 
-  articleContainer.innerHTML = aboutThisBlog;
-  navigationPanel.style.display = 'none';
+  /* Hash router function 
+     populate the blog page based on the location.hash value */
 
-  // location.hash = '#about';
-
-  function pageHashChnged() {
+  function pageHashChanged() {
     if (location.hash === '#about') {
-      aboutThisBlogPage();
+      articleContainer.innerHTML = aboutThisBlog;
+      textBlink();
     } else if (location.hash === '#latest') {
-      latestArticle();
+      articleContainer.innerHTML = articles[articles.length - 1].body;
+      currentArticleIndex = articles[articles.length - 1].index;
+      location.hash = articles[articles.length - 1].headline;
+      textBlink();
     }
   }
 
-  window.addEventListener('hashchange', pageHashChnged);
+  /* run the hash router function when the page hash changes */
+
+  window.addEventListener('hashchange', pageHashChanged);
+
+  articleContainer.innerHTML = articles[articles.length - 1].body;
+  currentArticleIndex = articles[articles.length - 1].index;
+  location.hash = articles[articles.length - 1].headline;
+  nextButton.style.display = 'none';
+  nextButtonCircle.style.display = 'inline-block';
+  textBlink();
 })();

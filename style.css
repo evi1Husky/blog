@@ -357,6 +357,8 @@ p {
   bottom: 3.2rem; 
   right: 19.7%; 
   transition: all 0.2s ease;
+  background: none;
+  border: none;
 }
 
 #backToTheTopSvg {
