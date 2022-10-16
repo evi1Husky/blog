@@ -144,13 +144,13 @@ function textBlink() {
     {
       'index': 0,
 
-      'headline': 'article1',
+      'headline': 'article 1',
 
       'date': '09/17/2022',
 
       'tag': '#catIpsum',
 
-      'hash': '#' + this.headline,
+      'hash': '#article1',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -266,11 +266,13 @@ function textBlink() {
     {
       'index': 1,
 
-      'headline': 'article2',
+      'headline': 'article 2',
 
       'date': '10/10/2022',
 
       'tag': '#catIpsum',
+
+      'hash': '#article2',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -467,11 +469,13 @@ function textBlink() {
     {
       'index': 2,
 
-      'headline': 'article3',
+      'headline': 'article 3',
 
       'date': '10/11/2022',
 
       'tag': '#catIpsum',
+
+      'hash': '#article3',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -618,11 +622,13 @@ function textBlink() {
     {
       'index': 3,
 
-      'headline': 'article4',
+      'headline': 'article 4',
 
       'date': '10/12/2022',
 
       'tag': '#catIpsum',
+
+      'hash': '#article4',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -658,11 +664,13 @@ function textBlink() {
     {
       'index': 4,
 
-      'headline': 'article5',
+      'headline': 'article 5',
 
       'date': '10/13/2022',
 
       'tag': '#catIpsum',
+
+      'hash': '#article5',
 
       'body': `
       <div class="authorsInfo">
@@ -692,7 +700,7 @@ function textBlink() {
     </p>
     <div class="line"></div>`
     },
-  ]
+  ];
 
   const aboutThisBlogButton = document.getElementById('infoButton');
   const latestArticleButton = document.getElementById('latestArticleButton');
@@ -708,25 +716,14 @@ function textBlink() {
   backToTheTop(previousArticle);
   backToTheTop(nextArticle);
 
-  function changeHash(event) {
-    const url = event.target.getAttribute('href');
-    location.hash = url;
-  }
-
   /* use a variable to store the array index of currently displayed article,
-     use this variable to implement previous/next article buttons */
+   use this variable to implement previous/next article buttons and search */
 
   let currentArticleIndex = null;
 
-  aboutThisBlogButton.addEventListener('click', function (event) {
-    dropDownMenu.style.display = 'none';
-    menuButtonSvg.style.transform = 'rotate(0deg)';
-    navigationPanel.style.display = 'none';
-    changeHash(event);
-    textBlink();
-  });
+  /* functions that change gui elements for each blog page */
 
-  latestArticleButton.addEventListener('click', function (event) {
+  function latestArticleAdjustPage() {
     dropDownMenu.style.display = 'none';
     menuButtonSvg.style.transform = 'rotate(0deg)';
     navigationPanel.style.display = 'flex';
@@ -734,6 +731,48 @@ function textBlink() {
     previousButton.style.display = 'inline-block';
     nextButtonCircle.style.display = 'inline-block';
     previousButtonCircle.style.display = 'none';
+  }
+
+  function aboutAdjustPage() {
+    dropDownMenu.style.display = 'none';
+    menuButtonSvg.style.transform = 'rotate(0deg)';
+    navigationPanel.style.display = 'none';
+  }
+
+  function adjustNavigationButtons() {
+    dropDownMenu.style.display = 'none';
+    menuButtonSvg.style.transform = 'rotate(0deg)';
+    navigationPanel.style.display = 'flex';
+    nextButton.style.display = 'inline-block';
+    nextButtonCircle.style.display = 'none';
+    previousButton.style.display = 'inline-block';
+    previousButtonCircle.style.display = 'none';
+    if (currentArticleIndex === 0) {
+      previousButton.style.display = 'none';
+      previousButtonCircle.style.display = 'inline-block';
+    } else if (currentArticleIndex === articles.length - 1) {
+      nextButton.style.display = 'none';
+      nextButtonCircle.style.display = 'inline-block';
+    } 
+  }
+
+  function printVariables() {
+    console.log(currentArticleIndex);
+    console.log(location.hash);
+  }
+
+  function changeHash(event) {
+    const url = event.target.getAttribute('href');
+    location.hash = url;
+  }
+
+  aboutThisBlogButton.addEventListener('click', function (event) {
+    aboutAdjustPage();
+    changeHash(event);
+    textBlink();
+  });
+
+  latestArticleButton.addEventListener('click', function (event) {
     changeHash(event);
     textBlink();
   });
@@ -741,42 +780,58 @@ function textBlink() {
   /* increment/decrement currentArticleIndex variable to display next/previous
      articles using arrow buttons */
 
-  previousArticle.addEventListener('click', function () {
+  previousArticle.addEventListener('click', function (event) {
+    event.preventDefault();
     currentArticleIndex -= 1;
-    articleContainer.innerHTML = articles[currentArticleIndex].body;
-    nextButton.style.display = 'inline-block';
-    nextButtonCircle.style.display = 'none';
-    if (currentArticleIndex == 0) {
-      previousButton.style.display = 'none';
-      previousButtonCircle.style.display = 'inline-block';
-    }
-    textBlink();
+    adjustNavigationButtons();
+    location.hash = articles[currentArticleIndex].hash;
   });
 
-  nextArticle.addEventListener('click', function () {
+  nextArticle.addEventListener('click', function (event) {
+    event.preventDefault();
     currentArticleIndex += 1;
-    articleContainer.innerHTML = articles[currentArticleIndex].body;
-    previousButton.style.display = 'inline-block';
-    previousButtonCircle.style.display = 'none';
-    if (currentArticleIndex == articles.length - 1) {
-      nextButton.style.display = 'none';
-      nextButtonCircle.style.display = 'inline-block';
-    }
-    textBlink();
+    adjustNavigationButtons();
+    location.hash = articles[currentArticleIndex].hash;
   });
+
+  /* recursive function to search article objects array for matching 
+     hash rout property */
+
+  const articleArrayIndex = articles.length - 1;
+
+  function articlesHashSearch(articleArrayIndex) {
+    if (articleArrayIndex === -1) {
+      return null;
+    } else if (articles[articleArrayIndex].hash === location.hash){
+      return articleArrayIndex;
+    } else {
+      return articlesHashSearch(articleArrayIndex - 1);
+    }
+  }
 
   /* Hash router function 
      populate the blog page based on the location.hash value */
 
   function pageHashChanged() {
     if (location.hash === '#about') {
+      aboutAdjustPage();
       articleContainer.innerHTML = aboutThisBlog;
       textBlink();
     } else if (location.hash === '#latest') {
+      latestArticleAdjustPage();
       articleContainer.innerHTML = articles[articles.length - 1].body;
       currentArticleIndex = articles[articles.length - 1].index;
-      location.hash = articles[articles.length - 1].headline;
+      location.hash = articles[articles.length - 1].hash;
       textBlink();
+    } else {
+      currentArticleIndex = articlesHashSearch(articleArrayIndex);
+      if (currentArticleIndex === null) {
+        alert('404 page not found');
+      } else {
+        adjustNavigationButtons(currentArticleIndex);
+        articleContainer.innerHTML = articles[currentArticleIndex].body;
+        textBlink();
+      }
     }
   }
 
@@ -784,10 +839,9 @@ function textBlink() {
 
   window.addEventListener('hashchange', pageHashChanged);
 
+  latestArticleAdjustPage();
+  currentArticleIndex = articles.length - 1;
   articleContainer.innerHTML = articles[articles.length - 1].body;
-  currentArticleIndex = articles[articles.length - 1].index;
-  location.hash = articles[articles.length - 1].headline;
-  nextButton.style.display = 'none';
-  nextButtonCircle.style.display = 'inline-block';
+  location.hash = articles[articles.length - 1].hash;
   textBlink();
 })();

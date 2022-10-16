@@ -73,6 +73,7 @@ html {
 
 a {
   text-decoration: none;
+  cursor: default;
 }
 
 /* Create a container that holds all web page elements and displays them
@@ -147,7 +148,6 @@ a {
   font-family: var(--font);
   font-weight: 500;
   font-size: var(--fontSizeFooter);
-  text-decoration: none;
   margin-bottom: 0.5rem
 }
 
@@ -485,11 +485,6 @@ p {
 #linkEmoji {
   font-size: 1.3rem;
   margin-right: 1.5rem;
-}
-
-#externalLinkButton {
-  text-decoration: none;
-  cursor: default;
 }
 
 /* Search input form */
