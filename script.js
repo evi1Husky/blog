@@ -715,11 +715,13 @@ function textBlink() {
   const previousButton = document.getElementById('previousButton');
   const nextButtonCircle = document.getElementById('nextButtonCircle');
   const previousButtonCircle = document.getElementById('previousButtonCircle');
+  const allArticlesButton = document.getElementById('allArticlesButton');
 
   backToTheTop(aboutThisBlogButton);
   backToTheTop(latestArticleButton);
   backToTheTop(previousArticle);
   backToTheTop(nextArticle);
+  backToTheTop(allArticlesButton);
 
   /* use a variable to store the array index of currently displayed article,
    use this variable to implement previous/next article buttons and search */
@@ -757,6 +759,12 @@ function textBlink() {
   }
 
   aboutThisBlogButton.addEventListener('click', function (event) {
+    menuButtonPressedAdjustPage()
+    changeHash(event);
+    textBlink();
+  });
+
+  allArticlesButton.addEventListener('click', function (event) {
     menuButtonPressedAdjustPage()
     changeHash(event);
     textBlink();
@@ -807,13 +815,17 @@ function textBlink() {
   /* Hash router function 
      populate the blog page based on the location.hash value */
 
-  function pageHashChanged() {
+  function hashRouter() {
     if (location.hash === '#!/about') {
       menuButtonPressedAdjustPage()
       articleContainer.innerHTML = aboutThisBlog;
-    } else if (location.hash === ''){
+    } else if (location.hash === '') {
       menuButtonPressedAdjustPage()
       articleContainer.innerHTML = aboutThisBlog;
+    } else if (location.hash === '#!/allArticles') {
+      menuButtonPressedAdjustPage()
+      articleContainer.innerHTML = articles.length + 
+        ' articles in article array';
     } else {
       currentArticleIndex = articlesHashSearch(articleArrayIndex);
       if (currentArticleIndex === null) {
@@ -828,7 +840,7 @@ function textBlink() {
 
   /* run the hash router function when the page hash changes */
 
-  window.addEventListener('hashchange', pageHashChanged);
+  window.addEventListener('hashchange', hashRouter);
 
-  pageHashChanged();
+  hashRouter();
 })();
