@@ -266,6 +266,8 @@ p {
  position: absolute;
  right: 20%;
  margin-top: 0.2rem;
+ background: none;
+ border: none;
 }
 
 #menuButtonSvg {

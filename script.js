@@ -150,7 +150,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#article1',
+      'hash': '#!/article1',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -272,7 +272,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#article2',
+      'hash': '#!/article2',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -475,7 +475,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#article3',
+      'hash': '#!/article3',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -628,7 +628,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#article4',
+      'hash': '#!/article4',
 
       'body': `<div class="authorsInfo">
       <svg id="authorsPfp" width="3rem" height="3rem" viewBox="0 0 4 4">
@@ -670,7 +670,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#article5',
+      'hash': '#!/article5',
 
       'body': `
       <div class="authorsInfo">
@@ -719,21 +719,11 @@ function textBlink() {
   /* use a variable to store the array index of currently displayed article,
    use this variable to implement previous/next article buttons and search */
 
-  let currentArticleIndex = null;
+  let currentArticleIndex = articles.length - 1;
 
   /* functions that change gui elements for each blog page */
 
-  function latestArticleAdjustPage() {
-    dropDownMenu.style.display = 'none';
-    menuButtonSvg.style.transform = 'rotate(0deg)';
-    navigationPanel.style.display = 'flex';
-    nextButton.style.display = 'none';
-    previousButton.style.display = 'inline-block';
-    nextButtonCircle.style.display = 'inline-block';
-    previousButtonCircle.style.display = 'none';
-  }
-
-  function aboutAdjustPage() {
+  function menuButtonPressedAdjustPage() {
     dropDownMenu.style.display = 'none';
     menuButtonSvg.style.transform = 'rotate(0deg)';
     navigationPanel.style.display = 'none';
@@ -767,12 +757,17 @@ function textBlink() {
   }
 
   aboutThisBlogButton.addEventListener('click', function (event) {
-    aboutAdjustPage();
+    menuButtonPressedAdjustPage()
     changeHash(event);
     textBlink();
   });
 
+  const latestArticleUrl = articles[articles.length - 1].hash;
+  latestArticleButton.setAttribute("href", latestArticleUrl);
+
   latestArticleButton.addEventListener('click', function (event) {
+    menuButtonPressedAdjustPage()
+    adjustNavigationButtons(currentArticleIndex);
     changeHash(event);
     textBlink();
   });
@@ -813,16 +808,9 @@ function textBlink() {
      populate the blog page based on the location.hash value */
 
   function pageHashChanged() {
-    if (location.hash === '#about') {
-      aboutAdjustPage();
+    if (location.hash === '#!/about') {
+      menuButtonPressedAdjustPage()
       articleContainer.innerHTML = aboutThisBlog;
-      textBlink();
-    } else if (location.hash === '#latest') {
-      latestArticleAdjustPage();
-      articleContainer.innerHTML = articles[articles.length - 1].body;
-      currentArticleIndex = articles[articles.length - 1].index;
-      location.hash = articles[articles.length - 1].hash;
-      textBlink();
     } else {
       currentArticleIndex = articlesHashSearch(articleArrayIndex);
       if (currentArticleIndex === null) {
@@ -830,18 +818,16 @@ function textBlink() {
       } else {
         adjustNavigationButtons(currentArticleIndex);
         articleContainer.innerHTML = articles[currentArticleIndex].body;
-        textBlink();
       }
     }
+    textBlink();
   }
 
   /* run the hash router function when the page hash changes */
 
   window.addEventListener('hashchange', pageHashChanged);
 
-  latestArticleAdjustPage();
-  currentArticleIndex = articles.length - 1;
-  articleContainer.innerHTML = articles[articles.length - 1].body;
-  location.hash = articles[articles.length - 1].hash;
+  location.hash = '';
+  location.hash = articles[currentArticleIndex].hash;
   textBlink();
 })();
