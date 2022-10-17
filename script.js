@@ -719,7 +719,7 @@ function textBlink() {
   /* use a variable to store the array index of currently displayed article,
    use this variable to implement previous/next article buttons and search */
 
-  let currentArticleIndex = articles.length - 1;
+  let currentArticleIndex = null;
 
   /* functions that change gui elements for each blog page */
 
@@ -744,11 +744,6 @@ function textBlink() {
       nextButton.style.display = 'none';
       nextButtonCircle.style.display = 'inline-block';
     } 
-  }
-
-  function printVariables() {
-    console.log(currentArticleIndex);
-    console.log(location.hash);
   }
 
   function changeHash(event) {
@@ -811,6 +806,9 @@ function textBlink() {
     if (location.hash === '#!/about') {
       menuButtonPressedAdjustPage()
       articleContainer.innerHTML = aboutThisBlog;
+    } else if (location.hash === ''){
+      menuButtonPressedAdjustPage()
+      articleContainer.innerHTML = aboutThisBlog;
     } else {
       currentArticleIndex = articlesHashSearch(articleArrayIndex);
       if (currentArticleIndex === null) {
@@ -827,7 +825,5 @@ function textBlink() {
 
   window.addEventListener('hashchange', pageHashChanged);
 
-  location.hash = '';
-  location.hash = articles[currentArticleIndex].hash;
-  textBlink();
+  pageHashChanged();
 })();
