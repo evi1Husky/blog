@@ -221,12 +221,18 @@ p {
   max-height: 500px;
 }
 
-.image {
+.imageSvg {
   align-self: center;
   max-width: 800px;
   max-height: 800px;
   margin-top:  2rem;
- /* transform: scale(1.5);*/
+}
+
+/* linked images */
+.image {
+  align-self: center;
+  max-width: 100%;
+  margin-top:  1.6rem;
 }
 
 /* html element with author's info: pfp, name and article   
@@ -625,6 +631,11 @@ p {
     margin-left: 1rem;
     margin-right: 3rem;
   }
+
+  .image {
+    align-self: center;
+    max-width: 100%;
+  }
 }
 
 /* media queries for desktop browsers */
@@ -634,7 +645,7 @@ p {
     margin-right: 1.5rem;
   }
 
-    #previousButtonCircle {
+  #previousButtonCircle {
     margin-right: 0.5rem;
   }
 
