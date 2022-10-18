@@ -87,9 +87,7 @@ a {
   justify-content: flex-start;
 }
 
-/*  Header
-
-/* header with shorter line */
+/*  Header */
 
 .header {
   display: flex;
@@ -166,6 +164,87 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+/* container for article links and styling for all
+  its elements for allArticles page */
+
+.articleLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  align-items: center;
+  margin-left: 14%;
+  padding: 0;
+}
+
+.headlineContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.articleLinkDate {
+ font-size: var(--fontSizeDate);
+ color: var(--dateColor);
+ padding-bottom: 0.3rem;
+ margin-right: 3rem;
+}
+
+.articleLinkLine {
+ margin-left: 5.4rem;
+ margin-top: 0;
+ margin-bottom: 0;
+ padding-top: 0;
+ padding-bottom: 0;
+ position: absolute;
+ z-index: -1;
+}
+
+.articleLinkAuthorsName {
+  font-size: 0.8rem;
+  color: var(--dateColor);
+  margin: 0;
+  line-height: 0.9rem;
+}
+
+.articleLinkTags {
+  font-size: 0.8rem;
+  color: var(--dateColor);
+  margin: 0;
+  line-height: 1.2rem;
+}
+
+.articleLinkHeadline {
+  font-size: 1.1rem;
+  color: var(--textColor);
+  margin: 0;
+  padding: 0;
+  line-height: 1.3rem;
+}
+
+@media (max-width: 710px) {
+  .articleLinkContainer {
+    margin-left: 0%;
+  }
+  .articleLinkHeadline {
+    font-size: 0.8rem;
+  }
+  .articleLinkTags {
+    font-size: 0.7rem;
+  }
+  .articleLinkAuthorsName {
+    font-size: 0.7rem;
+  }
+  .articleLinkDate {
+    font-size: 0.6rem;
+    min-width: 3.6rem;
+  }
+ .articleLinkLine {
+    margin-left: 4.8rem;
+  }
 }
 
 /* make the text blink when displaying new articles, use 

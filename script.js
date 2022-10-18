@@ -840,7 +840,7 @@ function textBlink() {
 
   /* run the hash router function when the page hash changes */
 
-  window.addEventListener('hashchange', hashRouter);
+  // window.addEventListener('hashchange', hashRouter);
 
-  hashRouter();
+  // hashRouter();
 })();
