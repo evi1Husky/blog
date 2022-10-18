@@ -225,6 +225,18 @@ a {
   line-height: 1.3rem;
 }
 
+.articleLinkHeadline:hover {
+  color: #72cc66;
+}
+
+.articleLinkHeadline:active {
+  color: #e872b3;
+}
+
+.allArticlesLine {
+  fill: var(--headerLineColor) !important;
+}
+
 @media (max-width: 710px) {
   .articleLinkContainer {
     margin-left: 0%;
