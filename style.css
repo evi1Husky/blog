@@ -192,6 +192,7 @@ a {
  color: var(--dateColor);
  padding-bottom: 0.3rem;
  margin-right: 3rem;
+ transition: color 1s;
 }
 
 .articleLinkLine {
@@ -209,6 +210,7 @@ a {
   color: var(--dateColor);
   margin: 0;
   line-height: 0.9rem;
+  transition: color 1s;
 }
 
 .articleLinkTags {
@@ -216,6 +218,7 @@ a {
   color: var(--dateColor);
   margin: 0;
   line-height: 1.2rem;
+  transition: color 1s;
 }
 
 .articleLinkHeadline {
@@ -224,18 +227,22 @@ a {
   margin: 0;
   padding: 0;
   line-height: 1.3rem;
+  transition: color 1s;
 }
 
 .articleLinkHeadline:hover {
   color: #72cc66;
+  transition: color 0s;
 }
 
 .articleLinkHeadline:active {
   color: #e872b3;
+  transition: color 0s;
 }
 
 .allArticlesLine {
   fill: var(--headerLineColor) !important;
+  transition: fill 1s;
 }
 
 @media (max-width: 710px) {
@@ -279,7 +286,7 @@ and then set it to none using setTimeOut() method with
 
 h1 {
   font-weight: 500;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: var(--fontSizeH2);
 }
 
@@ -295,6 +302,14 @@ p {
   margin-top: 1rem;
   font-size: var(--fontSizeParagraph);
   line-height: var(--lineHeight);
+}
+
+.articleTag {
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: var(--dateColor);
+  transition: color 1s;
+  margin-top: 1rem;
 }
 
 /* add an article decoration line after paragraphs */
