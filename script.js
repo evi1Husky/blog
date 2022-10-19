@@ -41,6 +41,14 @@ function backToTheTop(button) {
   });
 }
 
+function toTheTop() {
+  const rootElement = document.documentElement;
+    rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
 (() => {
   const target = document.querySelector('.footer');
   const backToTheTopButton = document.getElementById('backToTheTopButton');
@@ -821,6 +829,7 @@ function textBlink() {
       }
     }
     textBlink();
+    toTheTop();
   }
 
   /* run the hash router function when the page hash changes */

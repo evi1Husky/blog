@@ -251,7 +251,7 @@ a {
 
 @media (max-width: 710px) {
   .articleLinkContainer {
-    margin-left: 0.5rem;
+    margin-left: 0rem;
   }
   .articleLinkHeadline {
     font-size: 0.9rem;
@@ -263,13 +263,12 @@ a {
     font-size: 0.7rem;
   }
   .articleLinkDate {
-    font-size: 0.7rem;
-    min-width: 4.2rem;
+    font-size: 0.6rem;
+    min-width: 3.6rem;
   }
- .articleLinkLine {
-    margin-left: 5.4rem;
+  .articleLinkLine {
+    margin-left: 4.7rem;
   }
-
 }
 
 /* make the text blink when displaying new articles, use 
