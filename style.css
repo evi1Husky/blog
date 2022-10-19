@@ -265,9 +265,11 @@ a {
   .articleLinkDate {
     font-size: 0.6rem;
     min-width: 4.5rem;
+    margin-right: 1.5rem;
   }
   .articleLinkLine {
-    margin-left: 5.4rem;
+    margin-left: 0;
+    left: 5.7rem;
   }
 }
 
