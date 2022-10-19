@@ -14,6 +14,8 @@
   --dateColor: #575a5e;
   --headerColor: rgba(214, 216, 225, 0.5);
   --menuColor: rgba(214, 216, 225, 0.5);
+  --articleLinkHeadlineHover:  #72cc66;
+  --articleLinkHeadlineActive:  #e872b3;
 }
 
 .dark {
@@ -30,6 +32,8 @@
   --dateColor: #666B74;
   --headerColor: rgba(49, 52, 60, 0.5);
   --menuColor: rgba(49, 52, 60, 0.5);
+  --articleLinkHeadlineHover:  #72cc66;
+  --articleLinkHeadlineActive:  #e872b3;
 }
 
 /* font settings */
@@ -39,12 +43,12 @@
   --paragraphFontWeight: 100;
   --fontSizeHeader: 2rem;
   --fontSizeFooter: 0.7rem;
-  --fontSizeParagraph: 1.1rem;
+  --fontSizeParagraph: 1rem;
   --fontSizeH2: 1.5rem;
   --fontSizeH3: 1.3rem;
   --fontSizeName: 0.9rem;
   --fontSizeDate: 0.7rem;
-  --fontSizeMenu: 1rem;
+  --fontSizeMenu: 0.9rem;
   --lineHeight: 1.5rem;
 }
 
@@ -193,6 +197,7 @@ a {
  padding-bottom: 0.3rem;
  margin-right: 3rem;
  transition: color 1s;
+ min-width: 4.2rem;
 }
 
 .articleLinkLine {
@@ -231,12 +236,12 @@ a {
 }
 
 .articleLinkHeadline:hover {
-  color: #72cc66;
+  color: var(--articleLinkHeadlineHover);
   transition: color 0s;
 }
 
 .articleLinkHeadline:active {
-  color: #e872b3;
+  color: var(--articleLinkHeadlineActive);
   transition: color 0s;
 }
 
@@ -247,7 +252,7 @@ a {
 
 @media (max-width: 710px) {
   .articleLinkContainer {
-    margin-left: 0%;
+    margin-left: 0.5rem;
   }
   .articleLinkHeadline {
     font-size: 0.8rem;
@@ -259,12 +264,13 @@ a {
     font-size: 0.7rem;
   }
   .articleLinkDate {
-    font-size: 0.6rem;
-    min-width: 3.6rem;
+    font-size: 0.7rem;
+    min-width: 4.2rem;
   }
  .articleLinkLine {
-    margin-left: 4.8rem;
+    margin-left: 5.4rem;
   }
+
 }
 
 /* make the text blink when displaying new articles, use 
@@ -736,7 +742,7 @@ p {
 
   #searchBar {
     margin-left: 1rem;
-    margin-right: 3rem;
+    margin-right: 2.5rem;
   }
 
   .image {
