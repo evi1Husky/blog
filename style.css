@@ -179,7 +179,6 @@ a {
   flex-direction: row;
   align-self: flex-start;
   align-items: center;
-  margin-left: 14%;
   padding: 0;
 }
 
@@ -194,7 +193,7 @@ a {
 .articleLinkDate {
  font-size: var(--fontSizeDate);
  color: var(--dateColor);
- padding-bottom: 0.3rem;
+ padding-bottom: 0.6rem;
  margin-right: 3rem;
  transition: color 1s;
  min-width: 4.2rem;
@@ -255,7 +254,7 @@ a {
     margin-left: 0.5rem;
   }
   .articleLinkHeadline {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .articleLinkTags {
     font-size: 0.7rem;
