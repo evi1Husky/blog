@@ -623,7 +623,7 @@ p {
   border: 0;
   outline: none;
   color: var(--textColor);
-  font-size: 17px;
+  font-size: var(--fontSizeMenu);
   border-bottom: 0.06rem solid var(--footerLineColor);
   width: 8rem;
   margin-bottom: 0.3rem;
