@@ -310,12 +310,30 @@ p {
   line-height: var(--lineHeight);
 }
 
+.tagContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .articleTag {
   font-size: 0.8rem;
   font-weight: 100;
   color: var(--dateColor);
-  transition: color 1s;
+  transition: color 0.3s;
   margin-top: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 0.5rem;
+}
+
+.articleTag:hover {
+ color: var(--articleLinkHeadlineHover);
+}
+
+.articleTag:active {
+ color: var(--articleLinkHeadlineActive);
 }
 
 /* add an article decoration line after paragraphs */
