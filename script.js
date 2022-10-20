@@ -165,7 +165,7 @@ function textBlink() {
 
       'tag': "#catIpsum #test",
 
-      'hash': '#!/SpillLitterBoxDestroyAllFurniture',
+      'hash': '#/SpillLitterBoxDestroyAllFurniture',
 
       'body': `<div class="authorsInfo">${pfp}
       <div class="nameDate">
@@ -290,7 +290,7 @@ function textBlink() {
 
       'tag': '#catIpsum #test',
 
-      'hash': '#!/FreakHumanOutMakeFunnyNoiseMowMowMowMowMowMowSuccessNowAttackHuman',
+      'hash': '#/FreakHumanOutMakeFunnyNoiseMowMowMowMowMowMowSuccessNowAttackHuman',
 
       'body': `<div class="authorsInfo">${pfp}
       <div class="nameDate">
@@ -387,7 +387,7 @@ function textBlink() {
 
       'tag': '#catIpsum #test',
 
-      'hash': '#!/AnnoyOwnerUntilHeGivesYouFoodSayMeowRepeatedlyUntilBellyRubsFeelsGood',
+      'hash': '#/AnnoyOwnerUntilHeGivesYouFoodSayMeowRepeatedlyUntilBellyRubsFeelsGood',
 
       'body': `<div class="authorsInfo">${pfp}
       <div class="nameDate">
@@ -474,7 +474,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#!/PurrPurrPurrUntilOwnerPetsWhyOwnerNotPetMeHissScratchMeow',
+      'hash': '#/PurrPurrPurrUntilOwnerPetsWhyOwnerNotPetMeHissScratchMeow',
 
       'body': `<div class="authorsInfo">${pfp}
       <div class="nameDate">
@@ -517,7 +517,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#!/ChaseLittleRedDotSomedayItWillBeMine!IWillBePetIWillBePetAndThenIWillHiss',
+      'hash': '#/ChaseLittleRedDotSomedayItWillBeMine!IWillBePetIWillBePetAndThenIWillHiss',
 
       'body': `
       <div class="authorsInfo">${pfp}
@@ -559,7 +559,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#!/SpreadKittyLitterAllOverHousePlayTimeFloofTumTickleBumJellybeanFootiesCurlyToes',
+      'hash': '#/SpreadKittyLitterAllOverHousePlayTimeFloofTumTickleBumJellybeanFootiesCurlyToes',
 
       'body': `
       <div class="authorsInfo">${pfp}
@@ -600,7 +600,7 @@ function textBlink() {
 
       'tag': '#catIpsum',
 
-      'hash': '#!/LookAtDogHiiiiiisssssPounceOnUnsuspectinPerson',
+      'hash': '#/LookAtDogHiiiiiisssssPounceOnUnsuspectinPerson',
 
       'body': `
       <div class="authorsInfo">${pfp}
@@ -908,13 +908,13 @@ function textBlink() {
      populate the blog page based on the location.hash value */
 
   function hashRouter() {
-    if (location.hash === '#!/about') {
+    if (location.hash === '#/about') {
       menuButtonPressedAdjustPage()
       articleContainer.innerHTML = aboutThisBlog;
     } else if (location.hash === '') {
       menuButtonPressedAdjustPage()
       articleContainer.innerHTML = aboutThisBlog;
-    } else if (location.hash === '#!/allArticles') {
+    } else if (location.hash === '#/allArticles') {
       menuButtonPressedAdjustPage();
       articleContainer.innerHTML = '';
       buildAllArticlesPage(articleArrayIndex);
