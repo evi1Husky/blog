@@ -623,7 +623,7 @@ p {
   border: 0;
   outline: none;
   color: var(--textColor);
-  font-size: var(--fontSizeMenu);
+  font-size: 16px;
   border-bottom: 0.06rem solid var(--footerLineColor);
   width: 8rem;
   margin-bottom: 0.3rem;
@@ -759,7 +759,7 @@ p {
 
   #externalLinkButton {
     justify-content: center;
-    padding-right: 9.1rem;
+    padding-right: 8.5rem;
   }
 
   #darkModeButtonContainer {
