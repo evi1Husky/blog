@@ -11,16 +11,18 @@ drop down menu by clicking on blog article*/
     const display = style.display;
     if (display === 'none') {
       dropDownMenu.style.display = 'flex';
-      menuButtonSvg.style.transform = 'rotate(90deg)'
+      menuButtonSvg.style.transform = 'rotate(90deg)';
     } else {
       dropDownMenu.style.display = 'none';
-      menuButtonSvg.style.transform = 'rotate(0deg)'
+      menuButtonSvg.style.transform = 'rotate(0deg)';
+      searchResultsContainer.style.display = 'none';
     }
   });
   const articleContainer = document.getElementById('articleContainer');
   articleContainer.addEventListener('click', function() {
       dropDownMenu.style.display = 'none';
-      menuButtonSvg.style.transform = 'rotate(0deg)'
+      menuButtonSvg.style.transform = 'rotate(0deg)';
+      searchResultsContainer.style.display = 'none';
   });
 })();
 
@@ -592,7 +594,7 @@ function textBlink() {
       </div>
     </div>
     <h2 class="articleTag">#catIpsum</h2>
-    <h1>Spread kitty litter all over house play time floof tum, tickle bum, jellybean footies curly toes</h1>
+    <h1>Look at dog hiiiiiisssss pounce on unsuspecting person</h1>
     <p>
       Lick human with sandpaper tongue sleep over your phone and make cute snoring noises, for hide when guests come over slap the dog because cats rule yet the fat cat sat on the mat bat away with paws, and scratch the postman wake up lick paw wake up owner meow meow. Lick the plastic bag when in doubt, wash for rub whiskers on bare skin act innocent or make meme, make cute face for spend all night ensuring people don't sleep sleep all day and headbutt owner's knee enslave the hooman. Need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me pretend you want to go out but then don't yet nya nya nyan whatever. My slave human didn't give me any food so i pooped on the floor why must they do that be superior catch small lizards, bring them into house, then unable to find them on carpet. Experiences short bursts of poo-phoria after going to the loo slap owner's face at 5am until human fills food dish yet chew iPad power cord always ensure to lay down in such a manner that tail can lightly brush human's nose or meowzer love me!. Sleep on dog bed, force dog to sleep on floor hopped up on catnip. Intently stare at the same spot poop on floor and watch human clean up yet cat ass trophy licks your face fight an alligator and win so hide head under blanket so no one can see. Thinking about you i'm joking it's food always food cat mojo yet pounce on unsuspecting person if it fits i sits yet attempt to leap between furniture but woefully miscalibrate and bellyflop onto the floor; what's your problem? i meant to do that now i shall wash myself intently. Run at 3am furball roll roll roll. Lie on your belly and purr when you are asleep give attitude, but sleep nap but stare out cat door then go back inside climb a tree, wait for a fireman jump to fireman then scratch his face so sugar, my siamese, stalks me (in a good way), day and night . Pushes butt to face catch small lizards, bring them into house, then unable to find them on carpet stand in doorway, unwilling to chose whether to stay in or go out and
     </p>
@@ -792,6 +794,62 @@ function textBlink() {
     location.hash = articles[currentArticleIndex].hash;
   });
 
+  /* search input form
+     take user input and put it into input a variable, use array
+     .filter() and .includes() methods to search articles array
+     headline properties for mathching objects, generate a list of
+     links, attach href parameters from article objects to each link */
+
+  let input = '';
+
+  const searchBar = document.getElementById('searchBar');
+  const searchResultsContainer = 
+  document.getElementById('searchResultsContainer');
+
+  searchBar.addEventListener('input', (event) => {
+    searchResultsContainer.style.display = 'flex';
+    searchResultsContainer.innerHTML = '';
+    if(event.data === null) {
+      input = input.slice(0, -1); 
+    } else {
+      input += event.data;
+    }
+    let result = articles.filter(article => {
+      return article.headline.toLowerCase().includes(input.toLowerCase());
+    });
+    const length = result.length - 1;
+    buildSearchList(length, result)
+    if (input === '') {
+      searchResultsContainer.innerHTML = '';
+      searchResultsContainer.style.display = 'none';
+    } else if (searchResultsContainer.innerHTML === '') {
+      searchResultsContainer.style.display = 'none';
+    }
+  })
+
+  function createLinks(index, result) {
+
+    const searchResultLink = document.createElement('a');
+    searchResultLink.classList.add('searchLink');
+    searchResultLink.innerHTML = result[index].headline;
+    searchResultLink.setAttribute('href', result[index].hash);
+    searchResultLink.addEventListener('click', () => {
+      searchResultsContainer.style.display = 'none';
+        adjustNavigationButtons();
+        textBlink();
+    });
+    return searchResultLink;
+  }
+
+  function buildSearchList(length, result) {
+   if (length === -1) {
+     return;
+   } else {
+     searchResultsContainer.appendChild(createLinks(length, result));
+     return buildSearchList(length - 1, result);
+   }
+  }
+
   /* recursive function to search article objects array for matching 
      hash rout property */
 
@@ -828,8 +886,9 @@ function textBlink() {
         articleContainer.innerHTML = articles[currentArticleIndex].body;
       }
     }
-    textBlink();
-    toTheTop();
+   searchResultsContainer.style.display = 'none';
+   textBlink();
+   toTheTop();
   }
 
   /* run the hash router function when the page hash changes */
