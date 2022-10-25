@@ -676,7 +676,7 @@ function textBlink() {
     } else if (currentArticleIndex === articles.length - 1) {
       nextButton.style.display = 'none';
       nextButtonCircle.style.display = 'inline-block';
-    } 
+    }
   }
 
   function changeHash(event) {
